@@ -1,0 +1,36 @@
+# Dependencies
+/node_modules
+
+# Next.js build output
+/.next/
+/out/ # for static export in Next.js
+
+# Production build output (for Create React App or similar)
+/build/
+
+# Environment variables
+.env
+.env*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Misc
+*.log
+*.tgz
+*.zip
+.cache/
+.eslintcache
