@@ -5,6 +5,7 @@ export const config = {
 }
 
 export default function middleware(req: NextRequest) {
+  if(process.env.NODE_ENV === 'production'){
   const basicAuth = req.headers.get('authorization');
 
       if (basicAuth) {
@@ -27,4 +28,5 @@ export default function middleware(req: NextRequest) {
           'WWW-Authenticate': 'Basic realm="Secure Area"',
         },
       });
+    }
 }

@@ -1,0 +1,29 @@
+"use client"
+
+import { useTranslations } from "next-intl";
+import Link from "next/link"
+import type { ReactNode } from "react"
+
+export function Header(): ReactNode {
+  const t = useTranslations('header');
+  return (
+    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+      <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-2 font-bold text-lg">
+          <img className="h-16" src="/web-app-manifest-192x192.png" alt="PawCompass Logo" />
+        </Link>
+        <div className="hidden md:flex items-center gap-6">
+          <Link href="/animals" className="text-muted-foreground hover:text-foreground transition-colors">
+            {t('nav.browsePets')}
+          </Link>
+          <Link href="/quiz" className="text-muted-foreground hover:text-foreground transition-colors">
+            Quiz
+          </Link>
+          <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">
+            About
+          </Link>
+        </div>
+      </div>
+    </nav>
+  )
+}
