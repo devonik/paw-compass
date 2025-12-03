@@ -11,7 +11,7 @@ import { Icon } from "@iconify/react";
 export default function HomePage() {
   const t = useTranslations('home');
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-[#BE9681]/40">
+    <div className="min-h-screen bg-linear-to-br from-background via-background to-[#BE9681]/40">
       {/* Navigation */}
       <Header />
 
@@ -43,9 +43,9 @@ export default function HomePage() {
 
           {/* Hero Image Placeholder */}
           <div className="relative h-96 md:h-full">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl" />
+            <div className="absolute inset-0 bg-linear-to-br from-primary/20 to-accent-soft-hover rounded-3xl" />
             <img
-              src="/pets/happy-dogs-and-cats-together-in-a-warm-cozy-enviro.jpg"
+              src="/hero.png"
               alt="Happy pets from shelters"
               className="w-full h-full object-cover rounded-3xl relative z-10"
             />

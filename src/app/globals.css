@@ -132,9 +132,9 @@
 }
 
 .card--quaternary {
-  @apply bg-gradient-to-br from-primary/10 to-accent/40;
+  @apply bg-linear-to-br from-primary/10 to-accent/40;
 }
 
 .card--tertiary{
-  @apply bg-gradient-to-r from-primary/10 to-accent/10;
+  @apply bg-linear-to-br from-primary/10 to-accent/10;
 }
