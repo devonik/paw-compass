@@ -8,9 +8,11 @@ const TOAST_REMOVE_DELAY = 1000000
 
 type ToasterToast = {
   id: string
+  open: boolean
   title?: React.ReactNode
   description?: React.ReactNode
   action?: any
+  onOpenChange: (open: boolean) => void
 }
 
 const actionTypes = {
