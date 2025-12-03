@@ -12,7 +12,7 @@ import {
   type Preference,
 } from "@/src/lib/sample-data"
 import { AnimalCard } from "@/src/components/animal-card"
-import { ChevronLeft } from "lucide-react"
+import { Icon } from "@iconify/react";
 import type { QuizQuestion } from "@/types"
 
 export default function QuizPage() {
@@ -142,7 +142,11 @@ export default function QuizPage() {
                   disabled={step === 0}
                   className="flex items-center gap-2 px-6 py-2 text-muted-foreground hover:text-foreground disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
-                  <ChevronLeft className="w-4 h-4" />
+                  <Icon
+                    aria-label="Chevron Left icon"
+                    icon="gravity-ui:chevron-left"
+                    role="img"
+                  />
                   Previous
                 </button>
               </div>

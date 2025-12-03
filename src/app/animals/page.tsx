@@ -6,8 +6,9 @@ import { useState, useMemo } from "react"
 import { animals } from "@/src/lib/sample-data"
 import { AnimalCard } from "@/src/components/animal-card"
 import { Header } from "@/src/components/header"
-import { Search, Sliders } from "lucide-react"
+import { Icon } from "@iconify/react";
 import type { AnimalType, AnimalSize, EnergyLevel } from "@/types"
+import { Input } from "@heroui/react"
 
 export default function AnimalsPage() {
   const [searchTerm, setSearchTerm] = useState<string>("")
@@ -56,13 +57,17 @@ export default function AnimalsPage() {
         {/* Search Bar */}
         <div className="mb-8">
           <div className="relative">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-            <input
-              type="text"
+            <Icon
+              aria-label="Search icon"
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground"
+              icon="gravity-ui:magnifier"
+              role="img"
+            />
+            <Input 
               placeholder="Search by name or breed..."
+              className="w-full pl-12 pr-4 py-3"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 rounded-lg bg-card border border-border focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
         </div>
@@ -114,7 +119,12 @@ export default function AnimalsPage() {
             <label className="block text-sm font-medium mb-2">Results</label>
             <div className="flex items-center justify-between px-4 py-2 rounded-lg bg-card border border-border">
               <span className="font-medium">{filteredAnimals.length}</span>
-              <Sliders className="w-4 h-4 text-muted-foreground" />
+              <Icon
+                aria-label="Sliders icon"
+                className="text-primary size-6"
+                icon="gravity-ui:sliders-vertical"
+                role="img"
+              />
             </div>
           </div>
         </div>

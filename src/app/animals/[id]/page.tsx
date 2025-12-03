@@ -2,10 +2,10 @@
 
 import { animals, shelters } from "@/src/lib/sample-data"
 import { Header } from "@/src/components/header"
-import { Heart, MapPin, Mail, Phone } from "lucide-react"
 import { useParams } from "next/navigation"
 import Link from "next/link"
 import type { RouteParams } from "@/types"
+import { Icon } from "@iconify/react"
 
 export default function AnimalDetailPage() {
   const params = useParams<RouteParams>()
@@ -39,7 +39,12 @@ export default function AnimalDetailPage() {
             <div className="relative rounded-2xl overflow-hidden bg-muted h-96 md:h-full min-h-96">
               <img src={animal.image || "/placeholder.svg"} alt={animal.name} className="w-full h-full object-cover" />
               <button className="absolute top-4 right-4 p-3 bg-background/80 backdrop-blur rounded-full hover:bg-primary/20 transition-colors">
-                <Heart className="w-6 h-6 text-primary" />
+                <Icon
+                  aria-label="Heart icon"
+                  className="text-primary size-6"
+                  icon="gravity-ui:heart"
+                  role="img"
+                />
               </button>
             </div>
           </div>
@@ -107,17 +112,32 @@ export default function AnimalDetailPage() {
             <h3 className="text-xl font-semibold">{shelter.name}</h3>
             <div className="space-y-3">
               <div className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-primary" />
+                <Icon
+                  aria-label="Map Pin icon"
+                  className="text-primary size-5"
+                  icon="gravity-ui:map-pin"
+                  role="img"
+                />
                 <span>{shelter.location}</span>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-primary" />
+                <Icon
+                  aria-label="Email icon"
+                  className="text-primary size-5"
+                  icon="gravity-ui:envelope"
+                  role="img"
+                />
                 <a href={`mailto:${shelter.email}`} className="text-primary hover:underline">
                   {shelter.email}
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-primary" />
+                <Icon
+                  aria-label="Phone icon"
+                  className="text-primary size-5"
+                  icon="gravity-ui:handset"
+                  role="img"
+                />
                 <a href={`tel:${shelter.phone}`} className="text-primary hover:underline">
                   {shelter.phone}
                 </a>

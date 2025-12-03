@@ -4,7 +4,7 @@ import type React from "react"
 
 import Link from "next/link"
 import type { Animal } from "@/src/lib/sample-data"
-import { Heart } from "lucide-react"
+import { Icon } from "@iconify/react";
 import type { ReactNode } from "react"
 
 interface AnimalCardProps {
@@ -27,7 +27,12 @@ export function AnimalCard({ animal }: AnimalCardProps): ReactNode {
               e.preventDefault()
             }}
           >
-            <Heart className="w-5 h-5 text-primary" />
+            <Icon
+              aria-label="Heart icon"
+              className="text-primary size-6"
+              icon="gravity-ui:heart"
+              role="img"
+            />
           </button>
         </div>
         <div className="p-4 flex-1 flex flex-col">

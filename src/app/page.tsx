@@ -73,7 +73,7 @@ export default function HomePage() {
           </Card>
           <Card variant="quaternary">
             <Icon
-              aria-label="Search icon"
+              aria-label="Thunderbolt icon"
               className="text-primary size-6"
               icon="gravity-ui:thunderbolt"
               role="img"
@@ -87,7 +87,7 @@ export default function HomePage() {
           </Card>
           <Card variant="quaternary">
             <Icon
-              aria-label="Search icon"
+              aria-label="Heart icon"
               className="text-primary size-6"
               icon="gravity-ui:heart"
               role="img"
