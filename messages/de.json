@@ -1,0 +1,45 @@
+{
+  "common": {
+    "appName": "PawCompass",
+    "appShortDescription": "Wir bringen Tierfreunde mit Tierheimtieren zusammen, um dauerhafte Bindungen zu schaffen.",
+    "browse": "Durchsuchen",
+    "browsePets": "Haustiere durchsuchen",
+    "allPets": "Alle Haustiere",
+    "allDogs": "Alle Hunde",
+    "dogs": "Hunde",
+    "quiz": "Quiz",
+    "about": "Über uns",
+    "connect": "Verbinden",
+    "contact": "Kontakt",
+    "forShelters": "Für Tierheime",
+    "partnerWithUs": "Werden Sie unser Partner",
+    "features": "Funktionen",
+    "footerDisclaimer": "PawCompass. Wir bringen Haustiere mit ihrem perfekten Zuhause zusammen."
+  },
+  "home": {
+    "hero": {
+        "title": "Finde <highlight>deinen neuen</highlight> besten Freund",
+        "text": "Lerne Hunde aus geprüften Tierheimen kennen. Unser Smart Matching zeigt dir genau den Begleiter, der wirklich zu dir und deinem Alltag passt.",
+        "ctaBrowsePets": "Hund suchen",
+        "ctaQuiz": "Matching starten"
+    },
+    "features": {
+    "title": "So funktioniert es",
+    "feature1Title": "Suchen & Filtern",
+    "feature1Text": "Durchsuche Hunderte von Tieren aus Tierheimen in deiner Nähe. Filtere nach Rasse, Alter und mehr.",
+        "feature2Title": "Smart Matching",
+        "feature2Text": "Beantworte 15 einfache Fragen und erhalte personalisierte Empfehlungen, die zu dir passen.",
+        "feature3Title": "Kontakt aufnehmen & adoptieren",
+        "feature3Text": "Nimm direkt Kontakt zum Tierheim auf und adoptiere deinen neuen besten Freund fürs Leben."
+    },
+    "partnerShelters": {
+    "title": "Unsere Partner-Tierheime",
+    "text": "Wir arbeiten mit vertrauenswürdigen Tierheimen zusammen, um dir geprüfte und aktuelle Tierprofile bereitzustellen. Für Hunde, die ein neues Zuhause suchen."
+    },
+    "cta": {
+        "title": "Bereit für dein perfektes Match?",
+        "text": "Ob spontan oder mit Plan, dein neuer bester Freund wartet schon - mach den ersten Schritt.",
+        "ctaBrowseNow": "Match entdecken"
+    }
+  }
+}

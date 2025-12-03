@@ -1,7 +1,45 @@
 {
-  "header": {
-    "nav": {
-        "browsePets": "Browse Pets"
+  "common": {
+    "appName": "PawCompass",
+    "appShortDescription": "Connecting pet lovers with shelter animals to create lasting bonds.",
+    "browse": "Browse",
+    "browsePets": "Browse Pets",
+    "allPets": "All Pets",
+    "allDogs": "All Dogs",
+    "dogs": "Dogs",
+    "quiz": "Quiz",
+    "about": "About Us",
+    "connect": "Connect",
+    "contact": "Contact",
+    "forShelters": "For Shelters",
+    "partnerWithUs": "Partner With Us",
+    "features": "Features",
+    "footerDisclaimer": "PawCompass. Connecting pets with their perfect homes."
+  },
+  "home": {
+    "hero": {
+        "title": "Find Your <highlight>Perfect Pet</highlight> Companion",
+        "text": "Connect with animals from trusted shelters. Discover pets that match your lifestyle with our intelligent matching system. Give a loving home to a pet in need.",
+        "ctaBrowsePets": "Browse Pets",
+        "ctaQuiz": "Take Matching Quiz"
+    },
+    "features": {
+        "title": "How It Works",
+        "feature1Title": "Search & Filter",
+        "feature1Text": "Browse hundreds of animals from shelters near you. Filter by species, age, location, and more.",
+        "feature2Title": "Smart Matching",
+        "feature2Text": "Answer 5 simple questions to get personalized pet recommendations based on your lifestyle.",
+        "feature3Title": "Connect & Adopt",
+        "feature3Text": "Contact shelters directly and start your adoption journey. Make a difference in a pet's life."
+    },
+    "partnerShelters": {
+        "title": "Our Partner Shelters",
+        "text": "We work with trusted animal shelters to bring you verified, up-to-date listings of animals looking for their forever homes."
+    },
+    "cta": {
+        "title": "Ready to Meet Your Match?",
+        "text": "Whether you want to browse our full catalog or get personalized recommendations, we'll help you find the perfect companion.",
+        "ctaBrowseNow": "Start Browsing Now"
     }
   }
 }

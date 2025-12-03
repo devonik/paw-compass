@@ -5,7 +5,7 @@ import Link from "next/link"
 import type { ReactNode } from "react"
 
 export function Header(): ReactNode {
-  const t = useTranslations('header');
+  const t = useTranslations('common');
   return (
     <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
@@ -14,13 +14,13 @@ export function Header(): ReactNode {
         </Link>
         <div className="hidden md:flex items-center gap-6">
           <Link href="/animals" className="text-muted-foreground hover:text-foreground transition-colors">
-            {t('nav.browsePets')}
+            { t('browsePets') }
           </Link>
           <Link href="/quiz" className="text-muted-foreground hover:text-foreground transition-colors">
-            Quiz
+            { t('quiz') }
           </Link>
           <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">
-            About
+            { t('about') }
           </Link>
         </div>
       </div>

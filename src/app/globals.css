@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "@heroui/styles"; 
 
 @custom-variant dark (&:is(.dark *));
 
@@ -11,11 +12,11 @@
   --card-foreground: oklch(0.25 0.05 35);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.25 0.05 35);
-  --primary: oklch(0.62 0.25 40); /* Warm terracotta/pet-inspired orange */
+  --primary: oklch(0.72 0.2 40);
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.75 0.1 140); /* Soft sage green */
+  --secondary: oklch(0.7506 0.1502 26.57);
   --secondary-foreground: oklch(0.25 0.05 35);
-  --muted: oklch(0.92 0.02 70);
+  --muted: oklch(0.55 0.03 40);
   --muted-foreground: oklch(0.55 0.03 40);
   --accent: oklch(0.68 0.2 35); /* Warm earth tone */
   --accent-foreground: oklch(1 0 0);
@@ -123,4 +124,17 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Hero UI */
+.card__title {
+  @apply text-xl font-bold mb-3;
+}
+
+.card--quaternary {
+  @apply bg-gradient-to-br from-[#BE9681]/30  to-background;
+}
+
+.card--tertiary{
+  @apply bg-gradient-to-r from-primary/10 to-accent/10
 }
