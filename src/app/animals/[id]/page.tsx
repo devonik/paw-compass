@@ -4,11 +4,12 @@ import { animals, shelters } from "@/src/lib/sample-data"
 import { Header } from "@/src/components/header"
 import { useParams } from "next/navigation"
 import Link from "next/link"
-import type { RouteParams } from "@/types"
 import { Icon } from "@iconify/react"
 
 export default function AnimalDetailPage() {
-  const params = useParams<RouteParams>()
+  const params = useParams<{
+    id: string
+  }>()
   const id = params.id
   const animal = animals.find((a) => a.id === id)
   const shelter = animal ? shelters.find((s) => s.id === animal.shelterId) : null

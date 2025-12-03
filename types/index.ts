@@ -13,11 +13,6 @@ export type ActivityLevel = "low" | "medium" | "high"
 export type Experience = "beginner" | "experienced"
 export type Preference = "independent" | "affectionate" | "playful"
 
-// Route parameter types
-export interface RouteParams {
-  id: string
-}
-
 // Select/dropdown option types
 export interface SelectOption<T = string> {
   value: T
