@@ -41,5 +41,30 @@
         "text": "Whether you want to browse our full catalog or get personalized recommendations, we'll help you find the perfect companion.",
         "ctaBrowseNow": "Start Browsing Now"
     }
+  },
+  "about": {
+    "pageTitle": "About PawCompass",
+    "pageSubtitle": "Connecting loving homes with deserving pets",
+    "missionTitle": "Our Mission",
+    "missionText": "At PawCompass, we believe every pet deserves a loving home and every pet owner deserves a perfect companion. We're building a platform that connects compassionate people with amazing animals from trusted shelters.",
+    "whyTitle": "Why PawCompass?",
+    "whyItems": [
+      "Browse hundreds of animals from multiple shelters in one place",
+      "Smart matching quiz helps you find compatible pets",
+      "Direct connections with shelters",
+      "Beautiful profiles with detailed information"
+    ],
+    "quickFactsTitle": "Quick Facts",
+    "partnerShelters": "Partner Shelters",
+    "animalsAvailable": "Animals Available",
+    "founded": "Founded",
+    "teamTitle": "Our Team",
+    "teamMembers": [
+      "Sarah - Founder & Pet Enthusiast",
+      "Mike - Tech Lead",
+      "Emma - Partnership Manager"
+    ],
+    "ctaTitle": "Ready to Find Your Match?",
+    "ctaButton": "Start Matching Quiz"
   }
 }
