@@ -44,7 +44,7 @@
   },
   "about": {
     "pageTitle": "About PawCompass",
-    "pageSubtitle": "Connecting loving homes with deserving pets",
+    "pageSubtitle": "We promote friendships between dogs and humans",
     "missionTitle": "Our Mission",
     "missionText": "At PawCompass, we believe every pet deserves a loving home and every pet owner deserves a perfect companion. We're building a platform that connects compassionate people with amazing animals from trusted shelters.",
     "whyTitle": "Why PawCompass?",
@@ -52,18 +52,27 @@
       "Browse hundreds of animals from multiple shelters in one place",
       "Smart matching quiz helps you find compatible pets",
       "Direct connections with shelters",
-      "Beautiful profiles with detailed information"
+      "Comprehensive profiles of the dogs"
     ],
     "quickFactsTitle": "Quick Facts",
     "partnerShelters": "Partner Shelters",
     "animalsAvailable": "Animals Available",
     "founded": "Founded",
     "teamTitle": "Our Team",
-    "teamMembers": [
-      "Sarah - Founder & Pet Enthusiast",
-      "Mike - Tech Lead",
-      "Emma - Partnership Manager"
-    ],
+    "teamMembers": {
+      "max": {
+        "title": "Max",
+        "subtitle": "Founder & Dog lover"
+      },
+      "flo": {
+        "title": "Flo",
+        "subtitle": "Paw-Expert"
+      },
+      "nik": {
+        "title": "Niklas",
+        "subtitle": "Tech lead"
+      }
+    },
     "ctaTitle": "Ready to Find Your Match?",
     "ctaButton": "Start Matching Quiz"
   }

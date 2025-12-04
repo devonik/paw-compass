@@ -44,7 +44,7 @@
   },
   "about": {
     "pageTitle": "Über PawCompass",
-    "pageSubtitle": "Liebevolle Zuhause mit verdienstvollen Haustieren verbinden",
+    "pageSubtitle": "Wir fördern Freundschaften zwischen Hund und Mensch",
     "missionTitle": "Unsere Mission",
     "missionText": "Bei PawCompass glauben wir, dass jedes Tier ein liebevolles Zuhause verdient und jeder Tierbesitzer einen perfekten Begleiter verdient. Wir bauen eine Plattform, die mitfühlende Menschen mit erstaunlichen Tieren aus vertrauenswürdigen Tierheimen verbindet.",
     "whyTitle": "Warum PawCompass?",
@@ -52,18 +52,27 @@
       "Durchsuche Hunderte von Tieren aus mehreren Tierheimen an einem Ort",
       "Smart-Matching-Quiz hilft dir, kompatible Haustiere zu finden",
       "Direkte Verbindungen zu Tierheimen",
-      "Wunderschöne Profile mit detaillierten Informationen"
+      "Umfassende Profile der Hunde"
     ],
     "quickFactsTitle": "Schnelle Fakten",
     "partnerShelters": "Partner-Tierheime",
     "animalsAvailable": "Tiere verfügbar",
     "founded": "Gegründet",
     "teamTitle": "Unser Team",
-    "teamMembers": [
-      "Sarah - Gründerin & Tierliebhaberin",
-      "Mike - Tech Lead",
-      "Emma - Partnerships Manager"
-    ],
+    "teamMembers": {
+      "max": {
+        "title": "Max",
+        "subtitle": "Gründer & Hundeliebhaber"
+      },
+      "flo": {
+        "title": "Flo",
+        "subtitle": "Paw-Experte"
+      },
+      "nik": {
+        "title": "Niklas",
+        "subtitle": "Tech lead"
+      }
+    },
     "ctaTitle": "Bereit, dein Match zu finden?",
     "ctaButton": "Matching-Quiz starten"
   }

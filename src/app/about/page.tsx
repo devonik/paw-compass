@@ -3,7 +3,7 @@
 import { Header } from "@/src/components/header"
 import Link from "next/link"
 import { useTranslations } from "next-intl"
-import { Button, Card } from "@heroui/react"
+import { Avatar, Button, Card } from "@heroui/react"
 
 export default function AboutPage() {
   const t = useTranslations("about")
@@ -67,18 +67,60 @@ export default function AboutPage() {
         <div className="mb-16">
           <h2 className="text-3xl font-bold mb-8">{t("teamTitle")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {t.raw("teamMembers").map((member: string) => (
-              <Card className="text-center">
+            <Card className="text-center">
                 <Card.Header>
-                  <Card.Title><div className="w-20 h-20 mx-auto mb-4 bg-muted rounded-full flex items-center justify-center text-2xl">
-                    👤
-                  </div></Card.Title>
+                  <Avatar className="m-auto mb-3 size-28">
+                    <Avatar.Image
+                      className="object-cover"
+                      alt="Max avatar"
+                      src="/max.jpg"
+                    />
+                    <Avatar.Fallback>M</Avatar.Fallback>
+                  </Avatar>
+                  <Card.Title>
+                    { t('teamMembers.max.title') }
+                  </Card.Title>
                   <Card.Description>
-                    <p className="font-semibold">{member}</p>
+                    { t('teamMembers.max.subtitle') }
                   </Card.Description>
                 </Card.Header>
               </Card>
-            ))}
+            <Card className="text-center">
+                <Card.Header>
+                  <Avatar className="m-auto mb-3 size-28">
+                    <Avatar.Image
+                      className="object-cover"
+                      alt="Flo avatar"
+                      src="/flo.jpg"
+                    />
+                    <Avatar.Fallback>F</Avatar.Fallback>
+                  </Avatar>
+                  <Card.Title>
+                    { t('teamMembers.flo.title') }
+                  </Card.Title>
+                  <Card.Description>
+                    { t('teamMembers.flo.subtitle') }
+                  </Card.Description>
+                </Card.Header>
+              </Card>
+              <Card className="text-center">
+                <Card.Header>
+                  <Avatar className="m-auto mb-3 size-28">
+                    <Avatar.Image
+                      className="object-cover"
+                      alt="Nik avatar"
+                      src="/nik.jpg"
+                    />
+                    <Avatar.Fallback>N</Avatar.Fallback>
+                  </Avatar>
+                  <Card.Title>
+                    { t('teamMembers.nik.title') }
+                  </Card.Title>
+                  <Card.Description>
+                    { t('teamMembers.nik.subtitle') }
+                  </Card.Description>
+                </Card.Header>
+              </Card>
           </div>
         </div>
 
