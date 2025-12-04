@@ -127,6 +127,9 @@
 }
 
 /* Hero UI */
+.card{
+  @apply p-8;
+}
 .card__title {
   @apply text-xl font-bold mb-3;
 }

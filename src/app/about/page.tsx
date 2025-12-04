@@ -68,7 +68,7 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold mb-8">{t("teamTitle")}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {t.raw("teamMembers").map((member: string) => (
-              <Card className="p-6 text-center">
+              <Card className="text-center">
                 <Card.Header>
                   <Card.Title><div className="w-20 h-20 mx-auto mb-4 bg-muted rounded-full flex items-center justify-center text-2xl">
                     👤
@@ -83,7 +83,7 @@ export default function AboutPage() {
         </div>
 
         {/* CTA Section */}
-        <Card variant="tertiary" className="p-12 text-center">
+        <Card variant="tertiary" className="p-12! text-center">
           <Card.Header className="gap-4">
             <Card.Title className="text-3xl! md:text-4xl! font-bold mb-8">{t('ctaTitle')}</Card.Title>
           </Card.Header>
