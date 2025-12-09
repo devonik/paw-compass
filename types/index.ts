@@ -1,13 +1,12 @@
 // Animal filter types
 export type AnimalType = "dog" | "cat" | "rabbit" | "bird"
 export type AnimalSize = "small" | "medium" | "large"
+export type DogBreed = 'golderRetriever' | 'labrador' | 'germanShepherd' | 'bulldog' | 'beagle' | 'poodle' | 'rottweiler' | 'yorkshireTerrier' | 'boxer' | 'dachshund'
 export type EnergyLevel = "low" | "medium" | "high"
 
 // Filter value types (union of all possible filter values)
 export type FilterValue = "all" | AnimalType | AnimalSize | EnergyLevel
 
-// Quiz answer option types
-export type LivingSpace = "apartment" | "house"
 export type TimeAvailable = "low" | "medium" | "high"
 export type ActivityLevel = "low" | "medium" | "high"
 export type Experience = "beginner" | "experienced"
@@ -19,9 +18,15 @@ export interface SelectOption<T = string> {
   label: string
 }
 
+type QuizAnswerId = 'dogExperience' | 'householdChildren' | 'livingSituation' | 'soloAtHome' | 'activityLevel' | 'educationEffort' | 'protectiveInstinct' | 'furCare' | 'otherPets' | 'size'
+export type QuizAnswers = Record<QuizAnswerId, number | string>
+
 // Quiz question type
 export interface QuizQuestion {
-  id: "livingSpace" | "timeAvailable" | "activity" | "experience" | "preference"
+  id: QuizAnswerId
   title: string
-  options: SelectOption<string>[]
+  options: SelectOption<string | number>[]
+  renderAsRow?: boolean
 }
+
+

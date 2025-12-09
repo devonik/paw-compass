@@ -2,74 +2,97 @@
 
 import { useState } from "react"
 import { Header } from "@/src/components/header"
-import {
-  getMatchedAnimals,
-  type QuizAnswers,
-  type LivingSpace,
-  type TimeAvailable,
-  type ActivityLevel,
-  type Experience,
-  type Preference,
-} from "@/src/lib/sample-data"
+import { getMatchedAnimals} from "@/src/lib/sample-data";
 import { AnimalCard } from "@/src/components/animal-card"
 import { Icon } from "@iconify/react";
-import type { QuizQuestion } from "@/types"
+import type { QuizAnswers, QuizQuestion } from "@/types"
+import { useTranslations } from "next-intl"
+import { Button, Card } from "@heroui/react";
 
 export default function QuizPage() {
+  const t = useTranslations('quiz');
+
   const [step, setStep] = useState<number>(0)
   const [answers, setAnswers] = useState<Partial<QuizAnswers>>({})
   const [showResults, setShowResults] = useState<boolean>(false)
 
+  const numberAnswerOptions = [
+    { value: 0, label: "0" },
+    { value: 1, label: "1" },
+    { value: 2, label: "2" },
+    { value: 3, label: "3" },
+    { value: 4, label: "4" },
+    { value: 5, label: "5" },
+    { value: 6, label: "6" },
+    { value: 7, label: "7" },
+  ]
   const questions: QuizQuestion[] = [
     {
-      id: "livingSpace" as const,
-      title: "Where do you live?",
-      options: [
-        { value: "apartment" as LivingSpace, label: "Apartment" },
-        { value: "house" as LivingSpace, label: "House with yard" },
-      ],
+      id: "dogExperience" as const,
+      title: t(`questions.dogExperience`),
+      renderAsRow: true,
+      options: numberAnswerOptions,
     },
     {
-      id: "timeAvailable" as const,
-      title: "How much time can you dedicate to a pet daily?",
-      options: [
-        { value: "low" as TimeAvailable, label: "Less than 1 hour" },
-        { value: "medium" as TimeAvailable, label: "1-3 hours" },
-        { value: "high" as TimeAvailable, label: "More than 3 hours" },
-      ],
+      id: "householdChildren" as const,
+      title: t(`questions.householdChildren`),
+      renderAsRow: true,
+      options: numberAnswerOptions,
     },
     {
-      id: "activity" as const,
-      title: "What's your activity level?",
-      options: [
-        { value: "low" as ActivityLevel, label: "Low - I prefer quiet time" },
-        { value: "medium" as ActivityLevel, label: "Medium - Regular activities" },
-        { value: "high" as ActivityLevel, label: "High - Very active lifestyle" },
-      ],
+      id: "livingSituation" as const,
+      title: t(`questions.livingSituation`),
+      renderAsRow: true,
+      options: numberAnswerOptions,
     },
     {
-      id: "experience" as const,
-      title: "Pet ownership experience?",
-      options: [
-        { value: "beginner" as Experience, label: "First-time pet owner" },
-        { value: "experienced" as Experience, label: "I've had pets before" },
-      ],
+      id: "soloAtHome" as const,
+      title: t(`questions.soloAtHome`),
+      renderAsRow: true,
+      options: numberAnswerOptions,
     },
     {
-      id: "preference" as const,
-      title: "What personality type appeals to you?",
-      options: [
-        { value: "affectionate" as Preference, label: "Affectionate & cuddly" },
-        { value: "playful" as Preference, label: "Playful & energetic" },
-        { value: "independent" as Preference, label: "Independent & low-key" },
-      ],
+      id: "activityLevel" as const,
+      title: t(`questions.activityLevel`),
+      renderAsRow: true,
+      options: numberAnswerOptions,
     },
+    {
+      id: "educationEffort" as const,
+      title: t(`questions.educationEffort`),
+      renderAsRow: true,
+      options: numberAnswerOptions,
+    },
+    {
+      id: "protectiveInstinct" as const,
+      title: t(`questions.protectiveInstinct`),
+      renderAsRow: true,
+      options: numberAnswerOptions,
+    },
+    {
+      id: "furCare" as const,
+      title: t(`questions.furCare`),
+      renderAsRow: true,
+      options: numberAnswerOptions,
+    },
+    {
+      id: "otherPets" as const,
+      title: t(`questions.otherPets`),
+      renderAsRow: true,
+      options: numberAnswerOptions,
+    },
+    {
+      id: "size" as const,
+      title: t(`questions.size`),
+      renderAsRow: true,
+      options: numberAnswerOptions,
+    }
   ]
 
   const currentQuestion = questions[step]
   const isComplete = Object.keys(answers).length === questions.length
 
-  const handleAnswer = (value: string): void => {
+  const handleAnswer = (value: string | number): void => {
     setAnswers({
       ...answers,
       [currentQuestion.id]: value,
@@ -95,9 +118,9 @@ export default function QuizPage() {
         {!showResults ? (
           <div>
             <div className="mb-12">
-              <h1 className="text-4xl font-bold mb-2">Find Your Perfect Pet</h1>
+              <h1 className="text-4xl font-bold mb-2">{ t('title') }</h1>
               <p className="text-muted-foreground text-lg">
-                Answer a few questions and we'll match you with compatible pets
+                { t('subtitle') }
               </p>
             </div>
 
@@ -105,7 +128,7 @@ export default function QuizPage() {
             <div className="mb-8">
               <div className="flex justify-between mb-4">
                 <span className="text-sm font-medium">
-                  Question {step + 1} of {questions.length}
+                  { t('questionOf', { current: step + 1, total: questions.length }) }
                 </span>
                 <span className="text-sm text-muted-foreground">
                   {Math.round(((step + 1) / questions.length) * 100)}%
@@ -120,37 +143,37 @@ export default function QuizPage() {
             </div>
 
             {/* Question Card */}
-            <div className="bg-card rounded-2xl p-8 border border-border mb-8">
-              <h2 className="text-2xl font-bold mb-8">{currentQuestion.title}</h2>
-
-              <div className="space-y-3 mb-8">
-                {currentQuestion.options.map((option) => (
-                  <button
-                    key={option.value}
-                    onClick={() => handleAnswer(option.value)}
-                    className="w-full p-4 border-2 border-border rounded-lg hover:border-primary hover:bg-primary/5 transition-all text-left font-medium"
+            <Card >
+              <Card.Header>
+                <Card.Title className="mb-6!">{currentQuestion.title}</Card.Title>
+                <Card.Description>
+                  <div className={currentQuestion.renderAsRow ? "flex flex-row gap-4 mb-8" : "flex flex-col gap-4 mb-8"}>
+                    {currentQuestion.options.map((option) => (
+                      <button
+                        key={option.value}
+                        onClick={() => handleAnswer(option.value)}
+                        className="p-4 border-2 border-border rounded-lg hover:border-primary hover:bg-primary/5 transition-all text-left font-medium cursor-pointer"
+                      >
+                        {option.label}
+                      </button>
+                    ))}
+                  </div>
+                </Card.Description>
+              </Card.Header>
+                <Card.Footer className="flex justify-between">
+                  <Button
+                    onClick={handlePrevious}
+                    isDisabled={step === 0}
                   >
-                    {option.label}
-                  </button>
-                ))}
-              </div>
-
-              {/* Navigation */}
-              <div className="flex justify-between">
-                <button
-                  onClick={handlePrevious}
-                  disabled={step === 0}
-                  className="flex items-center gap-2 px-6 py-2 text-muted-foreground hover:text-foreground disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                >
-                  <Icon
-                    aria-label="Chevron Left icon"
-                    icon="gravity-ui:chevron-left"
-                    role="img"
-                  />
-                  Previous
-                </button>
-              </div>
-            </div>
+                    <Icon
+                      aria-label="Chevron Left icon"
+                      icon="gravity-ui:chevron-left"
+                      role="img"
+                    />
+                    { t('goBackCta') }
+                  </Button>
+                </Card.Footer>
+            </Card>
           </div>
         ) : (
           <div>

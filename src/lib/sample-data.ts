@@ -1,9 +1,11 @@
+import { DogBreed, QuizAnswers } from "@/types"
+
 // Sample animal data with shelter information
 export interface Animal {
   id: string
   name: string
-  type: "dog" | "cat" | "rabbit" | "bird"
-  breed: string
+  type: "dog"
+  breed: string // DogBreed
   age: number
   gender: "male" | "female"
   size: "small" | "medium" | "large"
@@ -58,7 +60,7 @@ export const shelters: Shelter[] = [
 
 export const animals: Animal[] = [
   {
-    id: "animal-1",
+    id: "dog-1",
     name: "Max",
     type: "dog",
     breed: "Golden Retriever",
@@ -67,7 +69,7 @@ export const animals: Animal[] = [
     size: "large",
     energy: "high",
     description:
-      "Max is an energetic golden retriever who loves playing fetch and making new friends. He's great with families and other dogs.",
+      "Max ist ein energiegeladener Golden Retriever, der gerne apportiert und neue Freunde findet. Er versteht sich gut mit Familien und anderen Hunden.",
     image: "/golden-retriever-dog-happy.jpg",
     shelterId: "shelter-1",
     shelterName: "Happy Paws Shelter",
@@ -76,25 +78,7 @@ export const animals: Animal[] = [
     traits: ["Friendly", "Energetic", "Good with kids", "Playful"],
   },
   {
-    id: "animal-2",
-    name: "Luna",
-    type: "cat",
-    breed: "Siamese Mix",
-    age: 2,
-    gender: "female",
-    size: "small",
-    energy: "medium",
-    description:
-      "Luna is a beautiful Siamese mix with striking blue eyes. She's affectionate and loves to cuddle. Perfect for apartment living.",
-    image: "/siamese-cat-beautiful.jpg",
-    shelterId: "shelter-2",
-    shelterName: "City Animal Care",
-    location: "Midtown",
-    adoptionFee: 100,
-    traits: ["Affectionate", "Vocal", "Quiet", "Indoor"],
-  },
-  {
-    id: "animal-3",
+    id: "dog-3",
     name: "Charlie",
     type: "dog",
     breed: "Beagle",
@@ -103,7 +87,7 @@ export const animals: Animal[] = [
     size: "small",
     energy: "medium",
     description:
-      "Charlie is a sweet beagle with a nose for adventure. He's calm in the house but loves daily walks. Great for active individuals.",
+      "Charlie ist ein lieber Beagle mit einer Vorliebe für Abenteuer. Zu Hause ist er ruhig, liebt aber tägliche Spaziergänge. Ideal für aktive Menschen.",
     image: "/beagle-dog-cute.jpg",
     shelterId: "shelter-1",
     shelterName: "Happy Paws Shelter",
@@ -112,25 +96,7 @@ export const animals: Animal[] = [
     traits: ["Calm", "Loyal", "Independent", "Adventurous"],
   },
   {
-    id: "animal-4",
-    name: "Whiskers",
-    type: "cat",
-    breed: "Tabby",
-    age: 1,
-    gender: "male",
-    size: "small",
-    energy: "high",
-    description:
-      "Whiskers is a playful orange tabby kitten full of energy. He loves interactive toys and climbing. Perfect for someone who wants an engaging pet.",
-    image: "/orange-tabby-kitten-playful.jpg",
-    shelterId: "shelter-3",
-    shelterName: "Rescue Ranch",
-    location: "Suburbs",
-    adoptionFee: 75,
-    traits: ["Playful", "Energetic", "Social", "Curious"],
-  },
-  {
-    id: "animal-5",
+    id: "dog-5",
     name: "Bella",
     type: "dog",
     breed: "Labrador Mix",
@@ -139,7 +105,7 @@ export const animals: Animal[] = [
     size: "large",
     energy: "high",
     description:
-      "Bella is a loving lab mix who thrives with active families. She's excellent with children and loves outdoor activities.",
+      "Bella ist eine liebevolle Labrador-Mischlingshündin, die sich in aktiven Familien wohlfühlt. Sie versteht sich hervorragend mit Kindern und liebt Aktivitäten im Freien.",
     image: "/labrador-dog-family-friendly.jpg",
     shelterId: "shelter-4",
     shelterName: "Hope for Tails",
@@ -148,25 +114,7 @@ export const animals: Animal[] = [
     traits: ["Family-friendly", "Active", "Loving", "Outgoing"],
   },
   {
-    id: "animal-6",
-    name: "Shadow",
-    type: "cat",
-    breed: "Black Cat",
-    age: 3,
-    gender: "male",
-    size: "small",
-    energy: "low",
-    description:
-      "Shadow is a calm and independent black cat. He enjoys quiet environments and loves to sunbathe. Perfect for seniors or quiet homes.",
-    image: "/black-cat-calm.jpg",
-    shelterId: "shelter-2",
-    shelterName: "City Animal Care",
-    location: "Midtown",
-    adoptionFee: 85,
-    traits: ["Calm", "Independent", "Quiet", "Low maintenance"],
-  },
-  {
-    id: "animal-7",
+    id: "dog-7",
     name: "Rocky",
     type: "dog",
     breed: "German Shepherd",
@@ -175,7 +123,7 @@ export const animals: Animal[] = [
     size: "large",
     energy: "high",
     description:
-      "Rocky is an intelligent and loyal German Shepherd. He needs an experienced owner who can provide training and plenty of exercise.",
+      "Rocky ist ein intelligenter und treuer Deutscher Schäferhund. Er braucht einen erfahrenen Besitzer, der ihn trainieren und ausreichend bewegen kann.",
     image: "/german-shepherd-dog-loyal.jpg",
     shelterId: "shelter-1",
     shelterName: "Happy Paws Shelter",
@@ -183,40 +131,7 @@ export const animals: Animal[] = [
     adoptionFee: 200,
     traits: ["Intelligent", "Loyal", "Energetic", "Protective"],
   },
-  {
-    id: "animal-8",
-    name: "Mittens",
-    type: "cat",
-    breed: "Calico",
-    age: 6,
-    gender: "female",
-    size: "small",
-    energy: "low",
-    description:
-      "Mittens is a sweet senior calico looking for a quiet retirement home. She's affectionate and loves gentle pets.",
-    image: "/calico-cat-senior.jpg",
-    shelterId: "shelter-3",
-    shelterName: "Rescue Ranch",
-    location: "Suburbs",
-    adoptionFee: 50,
-    traits: ["Senior", "Gentle", "Affectionate", "Calm"],
-  },
 ]
-
-// Quiz matching logic
-export type LivingSpace = "apartment" | "house"
-export type TimeAvailable = "low" | "medium" | "high"
-export type ActivityLevel = "low" | "medium" | "high"
-export type Experience = "beginner" | "experienced"
-export type Preference = "independent" | "affectionate" | "playful"
-
-export interface QuizAnswers {
-  livingSpace: LivingSpace
-  timeAvailable: TimeAvailable
-  activity: ActivityLevel
-  experience: Experience
-  preference: Preference
-}
 
 export function getMatchedAnimals(answers: QuizAnswers): Animal[] {
   return animals.filter((animal) => {
@@ -224,7 +139,7 @@ export function getMatchedAnimals(answers: QuizAnswers): Animal[] {
     let score = 0
 
     // Check living space compatibility
-    if (answers.livingSpace === "apartment" && animal.size !== "large") score++
+    /*if (answers.livingSpace === "apartment" && animal.size !== "large") score++
     if (answers.livingSpace === "house") score++
 
     // Check energy compatibility
@@ -239,7 +154,7 @@ export function getMatchedAnimals(answers: QuizAnswers): Animal[] {
     // Check preference compatibility
     if (answers.preference === "affectionate" && animal.traits.includes("Affectionate")) score += 2
     if (answers.preference === "playful" && animal.traits.includes("Playful")) score += 2
-    if (answers.preference === "independent" && animal.traits.includes("Independent")) score++
+    if (answers.preference === "independent" && animal.traits.includes("Independent")) score++*/
 
     return score >= 3
   })
