@@ -7,7 +7,7 @@ import { AnimalCard } from "@/src/components/animal-card"
 import { Icon } from "@iconify/react";
 import type { QuizAnswers, QuizQuestion } from "@/types"
 import { useTranslations } from "next-intl"
-import { Button, Card } from "@heroui/react";
+import { Button, Card, Link } from "@heroui/react";
 
 export default function QuizPage() {
   const t = useTranslations('quiz');
@@ -192,16 +192,15 @@ export default function QuizPage() {
                 </div>
 
                 <div className="text-center">
-                  <button
+                  <Button
                     onClick={() => {
                       setStep(0)
                       setAnswers({})
                       setShowResults(false)
                     }}
-                    className="px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium"
                   >
                     Take Quiz Again
-                  </button>
+                  </Button>
                 </div>
               </>
             ) : (
@@ -209,12 +208,7 @@ export default function QuizPage() {
                 <p className="text-lg text-muted-foreground mb-6">
                   No perfect matches found yet, but don't worry! Browse all our animals to find your companion.
                 </p>
-                <a
-                  href="/animals"
-                  className="px-8 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium inline-block"
-                >
-                  Browse All Pets
-                </a>
+                <Link href={`/animals`}>Browse All Pets</Link>
               </div>
             )}
           </div>
