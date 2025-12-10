@@ -82,16 +82,16 @@
     "questionOf": "Frage {current} von {total}",
     "goBackCta": "Zurück",
     "questions": {
-      "dogExperience": "Hundeerfahrung: Wie viel Erfahrung hast du bereits im Umgang mit Hunden? (0 = keine Erfahrung, 7 = sehr viel Erfahrung)",
-      "householdChildren": "Kinder im Haushalt: Wie wichtig ist es dir, dass dein Hund ausgesprochen kinderlieb ist? (0 = unwichtig, keine Kinder vorhanden; 7 = sehr wichtig, Kinder sind Teil des Haushalts)",
-      "livingSituation": "Wohnsituation: Wohnst du eher beengt oder sehr geräumig? (0 = kleine Stadtwohnung ohne Garten; 7 = großes Haus mit großem Garten)",
-      "soloAtHome": "Alleinebleiben: Wird dein Hund regelmäßig länger alleine zuhause bleiben müssen? (0 = nein, fast nie alleine; 7 = ja, täglich viele Stunden)",
-      "activityLevel": "Aktivitätslevel: Wie würdest du deinen eigenen Lebensstil beschreiben? (0 = eher ruhig, wenig sportlich; 7 = sehr aktiv, bereit für lange Spaziergänge und Outdoor-Abenteuer täglich)",
-      "educationEffort": "Erziehungsaufwand: Wie wichtig ist es dir, dass dein Hund leicht zu erziehen ist und schnell gehorcht? (0 = nicht so wichtig, mag auch Herausforderungen; 7 = sehr wichtig, er sollte möglichst einfach zu trainieren sein)",
-      "protectiveInstinct": "Schutztrieb: Legst du Wert darauf, dass dein Hund Haus und Familie beschützt und wachsam ist? (0 = überhaupt nicht, ein ruhiges/freundliches Gemüt ist mir lieber; 7 = ja, ein ausgeprägter Wach- und Schutzinstinkt ist erwünscht)",
-      "furCare": "Fellpflege: Wie wichtig ist es dir, dass dein Hund wenig haart und nur geringen Pflegeaufwand beim Fell hat? (0 = nicht wichtig, damit habe ich kein Problem; 7 = sehr wichtig, Fellpflege sollte minimal sein)",
-      "otherPets": "Andere Haustiere: Leben bereits andere Haustiere (z.B. Katzen) in deinem Haushalt, an die sich der Hund gewöhnen müsste? (0 = nein, keine weiteren Tiere; 7 = ja, es gibt bereits Haustiere, die hundeverträglich sein müssen)",
-      "size": "Gewünschte Größe: Welche Hundegröße entspricht eher deinen Vorlieben und Möglichkeiten? (0 = lieber ein kleiner Hund bis ca. 10 kg; 7 = gerne auch ein sehr großer Hund über 40 kg)"
+      "dogExperience": "Hundeerfahrung: Wie viel Erfahrung hast du bereits im Umgang mit Hunden? (1 = keine Erfahrung, 7 = sehr viel Erfahrung)",
+      "householdChildren": "Kinder im Haushalt: Wie wichtig ist es dir, dass dein Hund ausgesprochen kinderlieb ist? (1 = unwichtig, keine Kinder vorhanden; 7 = sehr wichtig, Kinder sind Teil des Haushalts)",
+      "livingSituation": "Wohnsituation: Wohnst du eher beengt oder sehr geräumig? (1 = kleine Stadtwohnung ohne Garten; 7 = großes Haus mit großem Garten)",
+      "soloAtHome": "Alleinebleiben: Wird dein Hund regelmäßig länger alleine zuhause bleiben müssen? (1 = nein, fast nie alleine; 7 = ja, täglich viele Stunden)",
+      "activityLevel": "Aktivitätslevel: Wie würdest du deinen eigenen Lebensstil beschreiben? (1 = eher ruhig, wenig sportlich; 7 = sehr aktiv, bereit für lange Spaziergänge und Outdoor-Abenteuer täglich)",
+      "educationEffort": "Erziehungsaufwand: Wie wichtig ist es dir, dass dein Hund leicht zu erziehen ist und schnell gehorcht? (1 = nicht so wichtig, mag auch Herausforderungen; 7 = sehr wichtig, er sollte möglichst einfach zu trainieren sein)",
+      "protectiveInstinct": "Schutztrieb: Legst du Wert darauf, dass dein Hund Haus und Familie beschützt und wachsam ist? (1 = überhaupt nicht, ein ruhiges/freundliches Gemüt ist mir lieber; 7 = ja, ein ausgeprägter Wach- und Schutzinstinkt ist erwünscht)",
+      "furCare": "Fellpflege: Wie wichtig ist es dir, dass dein Hund wenig haart und nur geringen Pflegeaufwand beim Fell hat? (1 = nicht wichtig, damit habe ich kein Problem; 7 = sehr wichtig, Fellpflege sollte minimal sein)",
+      "otherPets": "Andere Haustiere: Leben bereits andere Haustiere (z.B. Katzen) in deinem Haushalt, an die sich der Hund gewöhnen müsste? (1 = nein, keine weiteren Tiere; 7 = ja, es gibt bereits Haustiere, die hundeverträglich sein müssen)",
+      "size": "Gewünschte Größe: Welche Hundegröße entspricht eher deinen Vorlieben und Möglichkeiten? (1 = lieber ein kleiner Hund bis ca. 10 kg; 7 = gerne auch ein sehr großer Hund über 40 kg)"
     }
   }
 }

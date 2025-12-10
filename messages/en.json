@@ -82,16 +82,16 @@
     "questionOf": "Question {current} of {total}",
     "goBackCta": "Back",
     "questions": {
-      "dogExperience": "Dog experience: How much experience do you already have with dogs? (0 = no experience, 7 = a lot of experience)",
-      "householdChildren": "Children in the household: How important is it to you that your dog is very fond of children? (0 = not important, no children present; 7 = very important, children are part of the household)",
-      "livingSituation": "Living situation: Do you live in a rather cramped or very spacious home? (0 = small city apartment without a garden; 7 = large house with a large garden)",
-      "soloAtHome": "Left alone: Will your dog regularly have to stay home alone for long periods of time? (0 = no, almost never alone; 7 = yes, many hours every day)",
-      "activityLevel": "Activity level: How would you describe your own lifestyle? (0 = rather quiet, not very athletic; 7 = very active, ready for long walks and outdoor adventures every day)",
-      "educationEffort": "Training effort: How important is it to you that your dog is easy to train and obeys quickly? (0 = not so important, also likes challenges; 7 = very important, should be as easy to train as possible),",
-      "protectiveInstinct": "Protective instinct: Is it important to you that your dog protects your home and family and is alert? (0 = not at all, I prefer a calm/friendly temperament; 7 = yes, a strong guarding and protective instinct is desirable)",
-      "furCare": "Coat care: How important is it to you that your dog sheds little and requires minimal grooming? (0 = not important, I have no problem with that; 7 = very important, grooming should be minimal),",
-      "otherPets": "Other pets: Do you already have other pets (e.g., cats) in your household that the dog would have to get used to? (0 = no, no other animals; 7 = yes, there are already pets that must be dog-friendly),",
-      "size": "Desired size: Which dog size suits your preferences and possibilities better? (0 = preferably a small dog up to approx. 10 kg; 7 = preferably a very large dog over 40 kg)"
+      "dogExperience": "Dog experience: How much experience do you already have with dogs? (1 = no experience, 7 = a lot of experience)",
+      "householdChildren": "Children in the household: How important is it to you that your dog is very fond of children? (1 = not important, no children present; 7 = very important, children are part of the household)",
+      "livingSituation": "Living situation: Do you live in a rather cramped or very spacious home? (1 = small city apartment without a garden; 7 = large house with a large garden)",
+      "soloAtHome": "Left alone: Will your dog regularly have to stay home alone for long periods of time? (1 = no, almost never alone; 7 = yes, many hours every day)",
+      "activityLevel": "Activity level: How would you describe your own lifestyle? (1 = rather quiet, not very athletic; 7 = very active, ready for long walks and outdoor adventures every day)",
+      "educationEffort": "Training effort: How important is it to you that your dog is easy to train and obeys quickly? (1 = not so important, also likes challenges; 7 = very important, should be as easy to train as possible),",
+      "protectiveInstinct": "Protective instinct: Is it important to you that your dog protects your home and family and is alert? (1 = not at all, I prefer a calm/friendly temperament; 7 = yes, a strong guarding and protective instinct is desirable)",
+      "furCare": "Coat care: How important is it to you that your dog sheds little and requires minimal grooming? (1 = not important, I have no problem with that; 7 = very important, grooming should be minimal),",
+      "otherPets": "Other pets: Do you already have other pets (e.g., cats) in your household that the dog would have to get used to? (1 = no, no other animals; 7 = yes, there are already pets that must be dog-friendly),",
+      "size": "Desired size: Which dog size suits your preferences and possibilities better? (1 = preferably a small dog up to approx. 10 kg; 7 = preferably a very large dog over 40 kg)"
     }
   }
 }

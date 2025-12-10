@@ -1,7 +1,7 @@
 // Animal filter types
 export type AnimalType = "dog" | "cat" | "rabbit" | "bird"
 export type AnimalSize = "small" | "medium" | "large"
-export type DogBreed = 'golderRetriever' | 'labrador' | 'germanShepherd' | 'bulldog' | 'beagle' | 'poodle' | 'rottweiler' | 'yorkshireTerrier' | 'boxer' | 'dachshund'
+export type DogBreed = 'goldenRetriever' | 'akitaInu' | 'beagle' | 'rottweiler' | 'labrador' | 'dackel' | 'germanShepherd' | 'poodle'
 export type EnergyLevel = "low" | "medium" | "high"
 
 // Filter value types (union of all possible filter values)

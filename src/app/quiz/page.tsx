@@ -17,7 +17,6 @@ export default function QuizPage() {
   const [showResults, setShowResults] = useState<boolean>(false)
 
   const numberAnswerOptions = [
-    { value: 0, label: "0" },
     { value: 1, label: "1" },
     { value: 2, label: "2" },
     { value: 3, label: "3" },
@@ -108,7 +107,7 @@ export default function QuizPage() {
     if (step > 0) setStep(step - 1)
   }
 
-  const matchedAnimals = showResults && isComplete ? getMatchedAnimals(answers as QuizAnswers) : []
+  const {matchedAnimals, matchedBreeds} = showResults && isComplete ? getMatchedAnimals(answers as QuizAnswers) : {matchedAnimals: [], matchedBreeds: []}
 
   return (
     <div className="min-h-screen bg-background">
@@ -146,7 +145,7 @@ export default function QuizPage() {
             <Card >
               <Card.Header>
                 <Card.Title className="mb-6!">{currentQuestion.title}</Card.Title>
-                <Card.Description>
+                
                   <div className={currentQuestion.renderAsRow ? "flex flex-row gap-4 mb-8" : "flex flex-col gap-4 mb-8"}>
                     {currentQuestion.options.map((option) => (
                       <button
@@ -158,7 +157,7 @@ export default function QuizPage() {
                       </button>
                     ))}
                   </div>
-                </Card.Description>
+                
               </Card.Header>
                 <Card.Footer className="flex justify-between">
                   <Button
@@ -183,7 +182,7 @@ export default function QuizPage() {
                 Based on your preferences, here are the perfect pets for you:
               </p>
             </div>
-
+            {matchedAnimals.length > 0 && <p className="text-lg mb-6">Breeds matched: {matchedBreeds.join(', ')}</p>}
             {matchedAnimals.length > 0 ? (
               <>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">

@@ -5,7 +5,7 @@ export interface Animal {
   id: string
   name: string
   type: "dog"
-  breed: string // DogBreed
+  breed: DogBreed
   age: number
   gender: "male" | "female"
   size: "small" | "medium" | "large"
@@ -63,7 +63,7 @@ export const animals: Animal[] = [
     id: "dog-1",
     name: "Max",
     type: "dog",
-    breed: "Golden Retriever",
+    breed: "goldenRetriever",
     age: 3,
     gender: "male",
     size: "large",
@@ -81,7 +81,7 @@ export const animals: Animal[] = [
     id: "dog-3",
     name: "Charlie",
     type: "dog",
-    breed: "Beagle",
+    breed: "beagle",
     age: 5,
     gender: "male",
     size: "small",
@@ -99,7 +99,7 @@ export const animals: Animal[] = [
     id: "dog-5",
     name: "Bella",
     type: "dog",
-    breed: "Labrador Mix",
+    breed: "akitaInu",
     age: 4,
     gender: "female",
     size: "large",
@@ -117,7 +117,7 @@ export const animals: Animal[] = [
     id: "dog-7",
     name: "Rocky",
     type: "dog",
-    breed: "German Shepherd",
+    breed: "goldenRetriever",
     age: 2,
     gender: "male",
     size: "large",
@@ -133,29 +133,123 @@ export const animals: Animal[] = [
   },
 ]
 
-export function getMatchedAnimals(answers: QuizAnswers): Animal[] {
-  return animals.filter((animal) => {
+
+export function getMatchedAnimals(answers: QuizAnswers): {  matchedAnimals: Animal[], matchedBreeds: DogBreed[] } {
+  const breedMatchingScore: Record<DogBreed, QuizAnswers> = {
+    goldenRetriever: {
+      dogExperience: 7,
+      householdChildren: 7,
+      livingSituation: 3,
+      soloAtHome: 2,
+      activityLevel: 6,
+      educationEffort: 7,
+      protectiveInstinct: 2,
+      furCare: 4,
+      otherPets: 7,
+      size: 2,
+    },
+    akitaInu: {
+      dogExperience: 1,
+      householdChildren: 4,
+      livingSituation: 2,
+      soloAtHome: 4,
+      activityLevel: 6,
+      educationEffort: 2,
+      protectiveInstinct: 7,
+      furCare: 4,
+      otherPets: 2,
+      size: 2,
+    },
+    beagle: {
+      dogExperience: 3,
+      householdChildren: 6,
+      livingSituation: 6,
+      soloAtHome: 1,
+      activityLevel: 6,
+      educationEffort: 4,
+      protectiveInstinct: 2,
+      furCare: 2,
+      otherPets: 5,
+      size: 6,
+    },
+    rottweiler: {
+      dogExperience: 1,
+      householdChildren: 6,
+      livingSituation: 3,
+      soloAtHome: 2,
+      activityLevel: 6,
+      educationEffort: 5,
+      protectiveInstinct: 7,
+      furCare: 2,
+      otherPets: 3,
+      size: 3,
+    },
+    labrador: {
+      dogExperience: 7,
+      householdChildren: 7,
+      livingSituation: 3,
+      soloAtHome: 4,
+      activityLevel: 6,
+      educationEffort: 7,
+      protectiveInstinct: 2,
+      furCare: 4,
+      otherPets: 7,
+      size: 3,
+    },
+    dackel: {
+      dogExperience: 3,
+      householdChildren: 6,
+      livingSituation: 6,
+      soloAtHome: 2,
+      activityLevel: 4,
+      educationEffort: 2,
+      protectiveInstinct: 6,
+      furCare: 3,
+      otherPets: 4,
+      size: 5,
+    },
+    germanShepherd: {
+      dogExperience: 3,
+      householdChildren: 7,
+      livingSituation: 4,
+      soloAtHome: 3,
+      activityLevel: 7,
+      educationEffort: 7,
+      protectiveInstinct: 7,
+      furCare: 4,
+      otherPets: 5,
+      size: 4,
+    },
+    poodle: {
+      dogExperience: 7,
+      householdChildren: 7,
+      livingSituation: 7,
+      soloAtHome: 3,
+      activityLevel: 5,
+      educationEffort: 7,
+      protectiveInstinct: 2,
+      furCare: 6,
+      otherPets: 7,
+      size: 3,
+    }
+  }
+  let matchedBreeds: DogBreed[] = []
+  const matchedAnimals = animals.filter((animal) => {
     // Simple matching logic
     let score = 0
-
-    // Check living space compatibility
-    /*if (answers.livingSpace === "apartment" && animal.size !== "large") score++
-    if (answers.livingSpace === "house") score++
-
-    // Check energy compatibility
-    if (answers.activity === "high" && animal.energy === "high") score += 2
-    if (answers.activity === "medium" && animal.energy === "medium") score += 2
-    if (answers.activity === "low" && animal.energy === "low") score += 2
-
-    // Check experience compatibility
-    if (answers.experience === "beginner" && !animal.traits.includes("Protective")) score++
-    if (answers.experience === "experienced") score++
-
-    // Check preference compatibility
-    if (answers.preference === "affectionate" && animal.traits.includes("Affectionate")) score += 2
-    if (answers.preference === "playful" && animal.traits.includes("Playful")) score += 2
-    if (answers.preference === "independent" && animal.traits.includes("Independent")) score++*/
-
-    return score >= 3
+    Object.entries(breedMatchingScore[animal.breed as DogBreed]).forEach(([key, value]) => {
+      const answerValue = answers[key as keyof QuizAnswers]
+      if(typeof answerValue !== 'number' || typeof value !== 'number') throw new Error('Invalid answer value')
+      answerValue <= value ? score++ : score--
+    })
+    console.log(`Breed: ${animal.breed}, Score: ${score}`) 
+    if(score >= 3){
+      matchedBreeds.push(animal.breed as DogBreed)
+      return true
+    }
   })
+  return {
+    matchedAnimals,
+    matchedBreeds
+  }
 }
