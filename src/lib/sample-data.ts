@@ -137,9 +137,9 @@ export const animals: Animal[] = [
 export function getMatchedAnimals(answers: QuizAnswers): {  matchedAnimals: Animal[], matchedBreeds: DogBreed[] } {
   const breedMatchingScore: Record<DogBreed, QuizAnswers> = {
     goldenRetriever: {
-      dogExperience: 7,
+      dogExperience: 1,
       householdChildren: 7,
-      livingSituation: 3,
+      livingSituation: 5,
       soloAtHome: 2,
       activityLevel: 6,
       educationEffort: 7,
@@ -149,9 +149,9 @@ export function getMatchedAnimals(answers: QuizAnswers): {  matchedAnimals: Anim
       size: 2,
     },
     akitaInu: {
-      dogExperience: 1,
+      dogExperience: 7,
       householdChildren: 4,
-      livingSituation: 2,
+      livingSituation: 6,
       soloAtHome: 4,
       activityLevel: 6,
       educationEffort: 2,
@@ -161,9 +161,9 @@ export function getMatchedAnimals(answers: QuizAnswers): {  matchedAnimals: Anim
       size: 2,
     },
     beagle: {
-      dogExperience: 3,
+      dogExperience: 5,
       householdChildren: 6,
-      livingSituation: 6,
+      livingSituation: 2,
       soloAtHome: 1,
       activityLevel: 6,
       educationEffort: 4,
@@ -173,9 +173,9 @@ export function getMatchedAnimals(answers: QuizAnswers): {  matchedAnimals: Anim
       size: 6,
     },
     rottweiler: {
-      dogExperience: 1,
+      dogExperience: 7,
       householdChildren: 6,
-      livingSituation: 3,
+      livingSituation: 5,
       soloAtHome: 2,
       activityLevel: 6,
       educationEffort: 5,
@@ -185,9 +185,9 @@ export function getMatchedAnimals(answers: QuizAnswers): {  matchedAnimals: Anim
       size: 3,
     },
     labrador: {
-      dogExperience: 7,
+      dogExperience: 1,
       householdChildren: 7,
-      livingSituation: 3,
+      livingSituation: 5,
       soloAtHome: 4,
       activityLevel: 6,
       educationEffort: 7,
@@ -197,9 +197,9 @@ export function getMatchedAnimals(answers: QuizAnswers): {  matchedAnimals: Anim
       size: 3,
     },
     dackel: {
-      dogExperience: 3,
+      dogExperience: 5,
       householdChildren: 6,
-      livingSituation: 6,
+      livingSituation: 2,
       soloAtHome: 2,
       activityLevel: 4,
       educationEffort: 2,
@@ -209,7 +209,7 @@ export function getMatchedAnimals(answers: QuizAnswers): {  matchedAnimals: Anim
       size: 5,
     },
     germanShepherd: {
-      dogExperience: 3,
+      dogExperience: 5,
       householdChildren: 7,
       livingSituation: 4,
       soloAtHome: 3,
@@ -221,9 +221,9 @@ export function getMatchedAnimals(answers: QuizAnswers): {  matchedAnimals: Anim
       size: 4,
     },
     poodle: {
-      dogExperience: 7,
+      dogExperience: 1,
       householdChildren: 7,
-      livingSituation: 7,
+      livingSituation: 1,
       soloAtHome: 3,
       activityLevel: 5,
       educationEffort: 7,
@@ -240,10 +240,10 @@ export function getMatchedAnimals(answers: QuizAnswers): {  matchedAnimals: Anim
     Object.entries(breedMatchingScore[animal.breed as DogBreed]).forEach(([key, value]) => {
       const answerValue = answers[key as keyof QuizAnswers]
       if(typeof answerValue !== 'number' || typeof value !== 'number') throw new Error('Invalid answer value')
-      answerValue <= value ? score++ : score--
+      answerValue >= value ? score++ : score--
     })
     console.log(`Breed: ${animal.breed}, Score: ${score}`) 
-    if(score >= 3){
+    if(score >= 1){
       matchedBreeds.push(animal.breed as DogBreed)
       return true
     }

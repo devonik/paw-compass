@@ -182,7 +182,7 @@ export default function QuizPage() {
                 Based on your preferences, here are the perfect pets for you:
               </p>
             </div>
-            {matchedAnimals.length > 0 && <p className="text-lg mb-6">Breeds matched: {matchedBreeds.join(', ')}</p>}
+            {matchedBreeds.length > 0 && <p className="text-lg mb-6">Breeds matched: {matchedBreeds.join(', ')}</p>}
             {matchedAnimals.length > 0 ? (
               <>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
