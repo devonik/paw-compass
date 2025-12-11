@@ -177,9 +177,10 @@ export default function QuizPage() {
         ) : (
           <div>
             <div className="mb-12 text-center">
-              <h1 className="text-4xl font-bold mb-4">Your Matches!</h1>
+              <h1 className="text-4xl font-bold mb-4">{ t('resultTitle') }</h1>
               <p className="text-muted-foreground text-lg">
-                Based on your preferences, here are the perfect pets for you:
+                
+                { t('resultSubtitle') }
               </p>
             </div>
             {matchedBreeds.length > 0 && <p className="text-lg mb-6">Breeds matched: {matchedBreeds.join(', ')}</p>}

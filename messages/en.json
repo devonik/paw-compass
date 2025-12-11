@@ -79,6 +79,8 @@
   "quiz": {
     "title": "Find your ideal dog",
     "subtitle": "Answer the following questions to find the ideal dog for you.",
+    "resultTitle": "Your Perfect Matches",
+    "resultSubtitle": "Based on your answers, here are the ideal dogs for you:",
     "questionOf": "Question {current} of {total}",
     "goBackCta": "Back",
     "questions": {

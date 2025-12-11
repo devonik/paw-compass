@@ -77,8 +77,10 @@
     "ctaButton": "Matching-Quiz starten"
   },
   "quiz": {
-    "title": "Finde deinen idealen Hund",
-    "subtitle": "Beantworte die folgenden Fragen, um den idealen Hund für dich zu finden.",
+    "title": "Finde deinen perfekten Hund",
+    "subtitle": "Beantworte ein paar Fragen, damit wir dir deine Matches anzeigen können.",
+    "resultTitle": "Deine perfekten Matches",
+    "resultSubtitle": "Basierend auf deinen Antworten sind dies die idealen Hunde für dich:",
     "questionOf": "Frage {current} von {total}",
     "goBackCta": "Zurück",
     "questions": {
