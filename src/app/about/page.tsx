@@ -14,8 +14,8 @@ export default function AboutPage() {
 
       <main className="max-w-4xl mx-auto px-4 py-12">
         <div className="mb-12">
-          <h1 className="text-4xl font-bold mb-4">{t("pageTitle")}</h1>
-          <p className="text-muted-foreground text-lg">{t("pageSubtitle")}</p>
+          <h1 className="text-4xl font-bold mb-4">{t("title")}</h1>
+          <p className="text-muted-foreground text-lg">{t("subtitle")}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">

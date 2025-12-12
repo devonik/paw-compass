@@ -3,7 +3,7 @@
     "appName": "PawCompass",
     "appShortDescription": "Wir bringen Tierfreunde mit Tierheimtieren zusammen, um dauerhafte Bindungen zu schaffen.",
     "browse": "Durchsuchen",
-    "browsePets": "Haustiere durchsuchen",
+    "browsePets": "Hunde durchsuchen",
     "allPets": "Alle Haustiere",
     "allDogs": "Alle Hunde",
     "dogs": "Hunde",
@@ -14,7 +14,20 @@
     "forShelters": "Für Tierheime",
     "partnerWithUs": "Werden Sie unser Partner",
     "features": "Funktionen",
-    "footerDisclaimer": "PawCompass. Wir bringen Haustiere mit ihrem perfekten Zuhause zusammen."
+    "footerDisclaimer": "PawCompass. Wir bringen Haustiere mit ihrem perfekten Zuhause zusammen.",
+    "age": "Alter",
+    "gender": "Geschlecht",
+    "size": "Größe",
+    "energy": "Energielevel"
+  },
+  "petDetail":{
+    "notFound": "Tier nicht gefunden",
+    "adoptionFee": "Adoptionsgebühr",
+    "personalityTreats": "Persönlichkeitsmerkmale",
+    "contactShelter": "Tierheim kontaktieren",
+    "backToBrowse": "Zurück zur Übersicht",
+    "aboutTitle": "Über {name}",
+    "shelterInfo": "Informationen zum Tierheim"
   },
   "home": {
     "hero": {
@@ -43,8 +56,8 @@
     }
   },
   "about": {
-    "pageTitle": "Über PawCompass",
-    "pageSubtitle": "Wir fördern Freundschaften zwischen Hund und Mensch",
+    "title": "Über PawCompass",
+    "subtitle": "Wir fördern Freundschaften zwischen Hund und Mensch",
     "missionTitle": "Unsere Mission",
     "missionText": "Bei PawCompass glauben wir, dass jedes Tier ein liebevolles Zuhause verdient und jeder Tierbesitzer einen perfekten Begleiter verdient. Wir bauen eine Plattform, die mitfühlende Menschen mit erstaunlichen Tieren aus vertrauenswürdigen Tierheimen verbindet.",
     "whyTitle": "Warum PawCompass?",
@@ -76,6 +89,20 @@
     "ctaTitle": "Bereit, dein Match zu finden?",
     "ctaButton": "Matching-Quiz starten"
   },
+  "browse": {
+    "title": "Entdecke unsere Hunde",
+    "subtitle": "Dein neuer bester Freund wartet bereits.",
+    "searchPlaceholder": "Suche nach Namen oder Rasse...",
+    "resultsCount": "{count, plural, =0 {Keine Hunde} =1 {1 Hund} other {# Hunde}} gefunden",
+    "filters": {
+      "breed": "Rasse",
+      "allBreeds": "Alle Rassen",
+      "size": "Größe",
+      "allSizes": "Alle Größen",
+      "energy": "Energielevel",
+      "allEnergyLevels": "Alle Energielevel"
+    }
+  },
   "quiz": {
     "title": "Finde deinen perfekten Hund",
     "subtitle": "Beantworte ein paar Fragen, damit wir dir deine Matches anzeigen können.",
@@ -83,6 +110,9 @@
     "resultSubtitle": "Basierend auf deinen Antworten sind dies die idealen Hunde für dich:",
     "questionOf": "Frage {current} von {total}",
     "goBackCta": "Zurück",
+    "restartCta": "Quiz neu starten",
+    "noMatchText": "Leider konnten wir keinen Hund finden, der perfekt zu deinen Antworten passt. Versuche es doch noch einmal mit anderen Antworten oder durch",
+    "browseAllPetsCta": "Alle unsere Tiere zu durchsuchen",
     "questions": {
       "dogExperience": "Hundeerfahrung: Wie viel Erfahrung hast du bereits im Umgang mit Hunden? (1 = keine Erfahrung, 7 = sehr viel Erfahrung)",
       "householdChildren": "Kinder im Haushalt: Wie wichtig ist es dir, dass dein Hund ausgesprochen kinderlieb ist? (1 = unwichtig, keine Kinder vorhanden; 7 = sehr wichtig, Kinder sind Teil des Haushalts)",
@@ -95,5 +125,25 @@
       "otherPets": "Andere Haustiere: Leben bereits andere Haustiere (z.B. Katzen) in deinem Haushalt, an die sich der Hund gewöhnen müsste? (1 = nein, keine weiteren Tiere; 7 = ja, es gibt bereits Haustiere, die hundeverträglich sein müssen)",
       "size": "Gewünschte Größe: Welche Hundegröße entspricht eher deinen Vorlieben und Möglichkeiten? (1 = lieber ein kleiner Hund bis ca. 10 kg; 7 = gerne auch ein sehr großer Hund über 40 kg)"
     }
+  },
+  "dogBreeds": {
+    "goldenRetriever": "Golden Retriever",
+    "akitaInu": "Akita Inu",
+    "beagle": "Beagle",
+    "rottweiler": "Rottweiler",
+    "labrador": "Labrador",
+    "dackel": "Dackel",
+    "germanShepherd": "Deutscher Schäferhund",
+    "poodle": "Pudel"
+  },
+  "sizes": {
+    "small": "Klein",
+    "medium": "Mittel",
+    "large": "Groß"
+  },
+  "energyLevels": {
+    "low": "Niedrig",
+    "medium": "Mittel",
+    "high": "Hoch"
   }
 }

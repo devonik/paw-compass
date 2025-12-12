@@ -200,16 +200,16 @@ export default function QuizPage() {
                       setShowResults(false)
                     }}
                   >
-                    Take Quiz Again
+                    { t('restartCta')}
                   </Button>
                 </div>
               </>
             ) : (
               <div className="text-center py-12">
                 <p className="text-lg text-muted-foreground mb-6">
-                  No perfect matches found yet, but don't worry! Browse all our animals to find your companion.
+                  { t('noMatchText') }
                 </p>
-                <Link href={`/animals`}>Browse All Pets</Link>
+                <Link href={`/animals`}>{ t('browseAllPetsCta') }</Link>
               </div>
             )}
           </div>

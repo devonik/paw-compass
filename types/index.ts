@@ -1,11 +1,13 @@
 // Animal filter types
-export type AnimalType = "dog" | "cat" | "rabbit" | "bird"
-export type AnimalSize = "small" | "medium" | "large"
-export type DogBreed = 'goldenRetriever' | 'akitaInu' | 'beagle' | 'rottweiler' | 'labrador' | 'dackel' | 'germanShepherd' | 'poodle'
-export type EnergyLevel = "low" | "medium" | "high"
+export const PetSizesArray = ["small" , "medium" , "large"] as const;
+export type PetSizes = typeof PetSizesArray[number];
+export const DogBreedArray = ['goldenRetriever' , 'akitaInu' , 'beagle' , 'rottweiler' , 'labrador' , 'dackel' , 'germanShepherd' , 'poodle'] as const;
+export type DogBreed = typeof DogBreedArray[number];
+export const PetEnergyLevelArray = ["low" , "medium" , "high"] as const;
+export type PetEnergyLevel = typeof PetSizesArray[number];
 
 // Filter value types (union of all possible filter values)
-export type FilterValue = "all" | AnimalType | AnimalSize | EnergyLevel
+export type FilterValue = "all" | DogBreed | PetSizes | PetEnergyLevel
 
 export type TimeAvailable = "low" | "medium" | "high"
 export type ActivityLevel = "low" | "medium" | "high"

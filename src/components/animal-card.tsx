@@ -5,14 +5,16 @@ import type React from "react"
 import Link from "next/link"
 import type { Animal } from "@/src/lib/sample-data"
 import { Icon } from "@iconify/react";
-import type { ReactNode } from "react"
+import { use, type ReactNode } from "react"
 import { Button, Card } from "@heroui/react";
+import { useTranslations } from "next-intl";
 
 interface AnimalCardProps {
   animal: Animal
 }
 
 export function AnimalCard({ animal }: AnimalCardProps): ReactNode {
+  const tDogBreed = useTranslations('dogBreeds');
   return (
     <Link href={`/animals/${animal.id}`}>
       <Card >
@@ -38,7 +40,7 @@ export function AnimalCard({ animal }: AnimalCardProps): ReactNode {
         </div>
         <Card.Header>
           <Card.Title>{animal.name}</Card.Title>
-          <p className="text-sm text-muted-foreground mb-3">{animal.breed}</p>
+          <p className="text-sm text-muted-foreground mb-3">{ tDogBreed(animal.breed) }</p>
           <div className="flex gap-2 mb-4 flex-wrap">
             <span className="text-xs bg-primary/10 text-primary rounded-full px-2 py-1">{animal.age}y old</span>
             <span className="text-xs bg-secondary/10 text-secondary rounded-full px-2 py-1">{animal.size}</span>
