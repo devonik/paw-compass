@@ -26,7 +26,7 @@ export default function AnimalsPage() {
     return animals.filter((animal) => {
       const matchesSearch =
         animal.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        animal.breed.toLowerCase().includes(searchTerm.toLowerCase())
+        tDogBreed(animal.breed).toLowerCase().includes(searchTerm.toLowerCase())
       const matchesType = filterBreed === "all" || animal.breed === filterBreed
       const matchesSize = filterSize === "all" || animal.size === filterSize
       const matchesEnergy = filterEnergy === "all" || animal.energy === filterEnergy
