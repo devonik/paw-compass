@@ -70,7 +70,7 @@ export const animals: Animal[] = [
     energy: "high",
     description:
       "Max ist ein energiegeladener Golden Retriever, der gerne apportiert und neue Freunde findet. Er versteht sich gut mit Familien und anderen Hunden.",
-    image: "/pets/golden-retriever-dog-happy.jpg",
+    image: "/pets/golden-retriever.png",
     shelterId: "shelter-1",
     shelterName: "Happy Paws Shelter",
     location: "Downtown",

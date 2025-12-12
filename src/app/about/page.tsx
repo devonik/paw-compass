@@ -43,8 +43,7 @@ export default function AboutPage() {
           <Card variant="quaternary" className="p-8 h-fit">
             <Card.Header>
               <Card.Title>{t('quickFactsTitle')}</Card.Title>
-              <Card.Description>
-                <div className="space-y-6">
+              <div className="space-y-6">
                   <div>
                     <p className="text-4xl font-bold text-primary">8+</p>
                     <p className="text-muted-foreground">{t("partnerShelters")}</p>
@@ -58,7 +57,6 @@ export default function AboutPage() {
                     <p className="text-muted-foreground">{t("founded")}</p>
                   </div>
                 </div>
-              </Card.Description>
             </Card.Header>
           </Card>
         </div>
