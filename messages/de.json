@@ -27,7 +27,8 @@
     "contactShelter": "Tierheim kontaktieren",
     "backToBrowse": "Zurück zur Übersicht",
     "aboutTitle": "Über {name}",
-    "shelterInfo": "Informationen zum Tierheim"
+    "shelterInfo": "Informationen zum Tierheim",
+    "yearsOld": "{age} Jahre alt"
   },
   "home": {
     "hero": {

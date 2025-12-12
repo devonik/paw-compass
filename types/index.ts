@@ -4,7 +4,7 @@ export type PetSizes = typeof PetSizesArray[number];
 export const DogBreedArray = ['goldenRetriever' , 'akitaInu' , 'beagle' , 'rottweiler' , 'labrador' , 'dackel' , 'germanShepherd' , 'poodle'] as const;
 export type DogBreed = typeof DogBreedArray[number];
 export const PetEnergyLevelArray = ["low" , "medium" , "high"] as const;
-export type PetEnergyLevel = typeof PetSizesArray[number];
+export type PetEnergyLevel = typeof PetEnergyLevelArray[number];
 
 // Filter value types (union of all possible filter values)
 export type FilterValue = "all" | DogBreed | PetSizes | PetEnergyLevel

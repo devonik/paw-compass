@@ -1,4 +1,4 @@
-import { DogBreed, QuizAnswers } from "@/types"
+import { DogBreed, PetEnergyLevel, PetSizes, QuizAnswers } from "@/types"
 
 // Sample animal data with shelter information
 export interface Animal {
@@ -8,8 +8,8 @@ export interface Animal {
   breed: DogBreed
   age: number
   gender: "male" | "female"
-  size: "small" | "medium" | "large"
-  energy: "low" | "medium" | "high"
+  size: PetSizes
+  energy: PetEnergyLevel
   description: string
   image: string
   shelterId: string

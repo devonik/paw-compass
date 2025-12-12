@@ -27,7 +27,8 @@
     "contactShelter": "Contact shelter",
     "backToBrowse": "Back to overview",
     "aboutTitle": "About {name}",
-    "shelterInfo": "Information about the shelter"
+    "shelterInfo": "Information about the shelter",
+    "yearsOld": "{age} Years alt"
   },
   "home": {
     "hero": {
