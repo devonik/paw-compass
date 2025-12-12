@@ -6,6 +6,7 @@ import { useParams } from "next/navigation"
 import Link from "next/link"
 import { Icon } from "@iconify/react"
 import { useTranslations } from "next-intl"
+import { Button, Card } from "@heroui/react"
 
 export default function AnimalDetailPage() {
   const tDogBreed = useTranslations('dogBreeds');
@@ -26,7 +27,7 @@ export default function AnimalDetailPage() {
       <div className="min-h-screen bg-background">
         <Header />
         <main className="max-w-4xl mx-auto px-4 py-12">
-          <p className="text-lg text-muted-foreground">{ t('notFound') }</p>
+          <p className="text-lg text-muted-foreground">{t('notFound')}</p>
         </main>
       </div>
     )
@@ -46,14 +47,19 @@ export default function AnimalDetailPage() {
           <div className="md:col-span-2">
             <div className="relative rounded-2xl overflow-hidden bg-muted h-96 md:h-full min-h-96">
               <img src={animal.image || "/placeholder.svg"} alt={animal.name} className="w-full h-full object-cover" />
-              <button className="absolute top-4 right-4 p-3 bg-background/80 backdrop-blur rounded-full hover:bg-primary/20 transition-colors">
+              <Button
+                isIconOnly aria-label="Like" className="absolute top-3 right-3 p-2 bg-background/80 backdrop-blur rounded-full hover:bg-primary/20 transition-colors"
+                onClick={e => {
+                  e.preventDefault()
+                }}
+              >
                 <Icon
                   aria-label="Heart icon"
                   className="text-primary size-6"
                   icon="gravity-ui:heart"
                   role="img"
                 />
-              </button>
+              </Button>
             </div>
           </div>
 
@@ -64,7 +70,7 @@ export default function AnimalDetailPage() {
               <p className="text-muted-foreground text-lg">{tDogBreed(animal.breed)}</p>
             </div>
 
-            <div className="bg-card rounded-xl p-6 border border-border space-y-4">
+            <Card className="p-8 h-fit">
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <p className="text-xs text-muted-foreground mb-1">{tCommon('age')}</p>
@@ -83,12 +89,13 @@ export default function AnimalDetailPage() {
                   <p className="font-semibold capitalize">{tEnergies(animal.energy)}</p>
                 </div>
               </div>
-            </div>
-
-            <div className="bg-accent/10 rounded-xl p-6 border border-accent/20 space-y-3">
-              <p className="text-sm font-semibold text-accent">{t('adoptionFee')}</p>
-              <p className="text-3xl font-bold">${animal.adoptionFee}</p>
-            </div>
+            </Card>
+            <Card variant="quaternary" className="p-8">
+              <Card.Header className="font-bold text-primary">
+                {t('adoptionFee')}
+              </Card.Header>
+              <Card.Description className="text-3xl font-bold">${animal.adoptionFee}</Card.Description>
+            </Card>
 
             <div>
               <p className="text-sm font-semibold mb-3">{t('personalityTreats')}</p>
@@ -101,21 +108,23 @@ export default function AnimalDetailPage() {
               </div>
             </div>
 
-            <button className="w-full py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium">
+            <Button size="lg">
               {t('contactShelter')}
-            </button>
+            </Button>
           </div>
         </div>
 
         {/* Description */}
         <div className="mt-12 space-y-4">
-          <h2 className="text-2xl font-bold">{t('aboutTitle', { name: animal.name }) }</h2>
+          <h2 className="text-2xl font-bold">{t('aboutTitle', { name: animal.name })}</h2>
           <p className="text-muted-foreground leading-relaxed text-lg">{animal.description}</p>
         </div>
 
         {/* Shelter Info */}
-        <div className="mt-12 bg-card rounded-2xl p-8 border border-border">
-          <h2 className="text-2xl font-bold mb-6">{ t('shelterInfo') }</h2>
+        <Card className="mt-12 p-8">
+          <Card.Header className="text-2xl font-bold  mb-6">
+            {t('shelterInfo')}
+          </Card.Header>
           <div className="space-y-4">
             <h3 className="text-xl font-semibold">{shelter.name}</h3>
             <div className="space-y-3">
@@ -152,11 +161,11 @@ export default function AnimalDetailPage() {
               </div>
             </div>
 
-            <button className="mt-6 w-full py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-medium">
-              { t('contactShelter') }
-            </button>
+            <Button size="lg" className="mt-6 w-full py-3 ">
+              {t('contactShelter')}
+            </Button>
           </div>
-        </div>
+        </Card>
       </main>
     </div>
   )
