@@ -70,7 +70,7 @@ export const animals: Animal[] = [
     energy: "high",
     description:
       "Max ist ein energiegeladener Golden Retriever, der gerne apportiert und neue Freunde findet. Er versteht sich gut mit Familien und anderen Hunden.",
-    image: "/pets/golden-retriever.png",
+    image: "/pets/golden-retriever.webp",
     shelterId: "shelter-1",
     shelterName: "Happy Paws Shelter",
     location: "Downtown",
@@ -88,7 +88,7 @@ export const animals: Animal[] = [
     energy: "medium",
     description:
       "Charlie ist ein lieber Beagle mit einer Vorliebe für Abenteuer. Zu Hause ist er ruhig, liebt aber tägliche Spaziergänge. Ideal für aktive Menschen.",
-    image: "/pets/beagle.jpg",
+    image: "/pets/beagle.webp",
     shelterId: "shelter-1",
     shelterName: "Happy Paws Shelter",
     location: "Downtown",
@@ -106,7 +106,7 @@ export const animals: Animal[] = [
     energy: "medium",
     description:
       "Charlie ist ein lieber Beagle mit einer Vorliebe für Abenteuer. Zu Hause ist er ruhig, liebt aber tägliche Spaziergänge. Ideal für aktive Menschen.",
-    image: "/pets/rottweiler.png",
+    image: "/pets/rottweiler.webp",
     shelterId: "shelter-1",
     shelterName: "Happy Paws Shelter",
     location: "Downtown",
@@ -124,7 +124,7 @@ export const animals: Animal[] = [
     energy: "medium",
     description:
       "Charlie ist ein lieber Beagle mit einer Vorliebe für Abenteuer. Zu Hause ist er ruhig, liebt aber tägliche Spaziergänge. Ideal für aktive Menschen.",
-    image: "/pets/labrador.png",
+    image: "/pets/labrador.webp",
     shelterId: "shelter-1",
     shelterName: "Happy Paws Shelter",
     location: "Downtown",
@@ -142,7 +142,7 @@ export const animals: Animal[] = [
     energy: "high",
     description:
       "Bella ist eine liebevolle Labrador-Mischlingshündin, die sich in aktiven Familien wohlfühlt. Sie versteht sich hervorragend mit Kindern und liebt Aktivitäten im Freien.",
-    image: "/pets/akita-inu.png",
+    image: "/pets/akita-inu.webp",
     shelterId: "shelter-4",
     shelterName: "Hope for Tails",
     location: "East Side",
@@ -160,7 +160,7 @@ export const animals: Animal[] = [
     energy: "high",
     description:
       "Bella ist eine liebevolle Labrador-Mischlingshündin, die sich in aktiven Familien wohlfühlt. Sie versteht sich hervorragend mit Kindern und liebt Aktivitäten im Freien.",
-    image: "/pets/dackel.png",
+    image: "/pets/dackel.webp",
     shelterId: "shelter-4",
     shelterName: "Hope for Tails",
     location: "East Side",
@@ -178,7 +178,7 @@ export const animals: Animal[] = [
     energy: "high",
     description:
       "Rocky ist ein intelligenter und treuer Deutscher Schäferhund. Er braucht einen erfahrenen Besitzer, der ihn trainieren und ausreichend bewegen kann.",
-    image: "/pets/german-shepard.png",
+    image: "/pets/german-shepard.webp",
     shelterId: "shelter-1",
     shelterName: "Happy Paws Shelter",
     location: "Downtown",
@@ -196,7 +196,7 @@ export const animals: Animal[] = [
     energy: "high",
     description:
       "Rocky ist ein intelligenter und treuer Deutscher Schäferhund. Er braucht einen erfahrenen Besitzer, der ihn trainieren und ausreichend bewegen kann.",
-    image: "/pets/poodle.png",
+    image: "/pets/poodle.webp",
     shelterId: "shelter-1",
     shelterName: "Happy Paws Shelter",
     location: "Downtown",

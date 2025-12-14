@@ -45,7 +45,7 @@ export default function HomePage() {
           <div className="relative h-96 md:h-full">
             <div className="absolute inset-0 bg-linear-to-br from-primary/20 to-accent-soft-hover rounded-3xl" />
             <img
-              src="/hero.png"
+              src="/hero.webp"
               alt="Happy pets from shelters"
               className="w-full h-full object-cover rounded-3xl relative z-10"
             />
