@@ -155,7 +155,7 @@ export default function QuizPage() {
               <Card.Header>
                 <Card.Title className="mb-6!">{currentQuestion.title}</Card.Title>
 
-                <div className={currentQuestion.renderAsRow ? "flex flex-row gap-4 mb-8" : "flex flex-col gap-4 mb-8"}>
+                <div className={currentQuestion.renderAsRow ? "flex flex-row flex-wrap gap-4 mb-8" : "flex flex-col gap-4 mb-8"}>
                   {currentQuestion.options.map((option) => (
                     <button
                       key={option.value}
