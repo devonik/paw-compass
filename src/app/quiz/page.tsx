@@ -1,20 +1,29 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Header } from "@/src/components/header"
-import { getMatchedAnimals} from "@/src/lib/sample-data";
+import { getMatchedAnimals } from "@/src/lib/sample-data";
 import { AnimalCard } from "@/src/components/animal-card"
 import { Icon } from "@iconify/react";
 import type { QuizAnswers, QuizQuestion } from "@/types"
 import { useTranslations } from "next-intl"
 import { Button, Card, Link } from "@heroui/react";
+import { useSearchParams } from "next/navigation";
+import { setUserLocale } from "@/src/actions/locale";
 
 export default function QuizPage() {
   const t = useTranslations('quiz');
+  const searchParams = useSearchParams()
 
   const [step, setStep] = useState<number>(0)
   const [answers, setAnswers] = useState<Partial<QuizAnswers>>({})
   const [showResults, setShowResults] = useState<boolean>(false)
+
+  //Special logice - temporary
+  const isSpecial = searchParams.get('special') === '1';
+  useEffect(() => { if (isSpecial) setUserLocale('en') }, []);
+  const [showPresents, setShowPresents] = useState<boolean>(false);
+  const [selectedPresent, setSelectedPresent] = useState<string | null>(null);
 
   const numberAnswerOptions = [
     { value: 1, label: "1" },
@@ -107,7 +116,7 @@ export default function QuizPage() {
     if (step > 0) setStep(step - 1)
   }
 
-  const {matchedAnimals, matchedBreeds} = showResults && isComplete ? getMatchedAnimals(answers as QuizAnswers) : {matchedAnimals: [], matchedBreeds: []}
+  const { matchedAnimals, matchedBreeds } = showResults && isComplete ? getMatchedAnimals(answers as QuizAnswers) : { matchedAnimals: [], matchedBreeds: [] }
 
   return (
     <div className="min-h-screen bg-background">
@@ -117,9 +126,9 @@ export default function QuizPage() {
         {!showResults ? (
           <div>
             <div className="mb-12">
-              <h1 className="text-4xl font-bold mb-2">{ t('title') }</h1>
+              <h1 className="text-4xl font-bold mb-2">{t('title')}</h1>
               <p className="text-muted-foreground text-lg">
-                { t('subtitle') }
+                {t('subtitle')}
               </p>
             </div>
 
@@ -127,7 +136,7 @@ export default function QuizPage() {
             <div className="mb-8">
               <div className="flex justify-between mb-4">
                 <span className="text-sm font-medium">
-                  { t('questionOf', { current: step + 1, total: questions.length }) }
+                  {t('questionOf', { current: step + 1, total: questions.length })}
                 </span>
                 <span className="text-sm text-muted-foreground">
                   {Math.round(((step + 1) / questions.length) * 100)}%
@@ -145,73 +154,102 @@ export default function QuizPage() {
             <Card >
               <Card.Header>
                 <Card.Title className="mb-6!">{currentQuestion.title}</Card.Title>
-                
-                  <div className={currentQuestion.renderAsRow ? "flex flex-row gap-4 mb-8" : "flex flex-col gap-4 mb-8"}>
-                    {currentQuestion.options.map((option) => (
-                      <button
-                        key={option.value}
-                        onClick={() => handleAnswer(option.value)}
-                        className="p-4 border-2 border-border rounded-lg hover:border-primary hover:bg-primary/5 transition-all text-left font-medium cursor-pointer"
-                      >
-                        {option.label}
-                      </button>
-                    ))}
-                  </div>
-                
+
+                <div className={currentQuestion.renderAsRow ? "flex flex-row gap-4 mb-8" : "flex flex-col gap-4 mb-8"}>
+                  {currentQuestion.options.map((option) => (
+                    <button
+                      key={option.value}
+                      onClick={() => handleAnswer(option.value)}
+                      className="p-4 border-2 border-border rounded-lg hover:border-primary hover:bg-primary/5 transition-all text-left font-medium cursor-pointer"
+                    >
+                      {option.label}
+                    </button>
+                  ))}
+                </div>
+
               </Card.Header>
-                <Card.Footer className="flex justify-between">
-                  <Button
-                    onClick={handlePrevious}
-                    isDisabled={step === 0}
-                  >
-                    <Icon
-                      aria-label="Chevron Left icon"
-                      icon="gravity-ui:chevron-left"
-                      role="img"
-                    />
-                    { t('goBackCta') }
-                  </Button>
-                </Card.Footer>
+              <Card.Footer className="flex justify-between">
+                <Button
+                  onClick={handlePrevious}
+                  isDisabled={step === 0}
+                >
+                  <Icon
+                    aria-label="Chevron Left icon"
+                    icon="gravity-ui:chevron-left"
+                    role="img"
+                  />
+                  {t('goBackCta')}
+                </Button>
+              </Card.Footer>
             </Card>
           </div>
         ) : (
           <div>
             <div className="mb-12 text-center">
-              <h1 className="text-4xl font-bold mb-4">{ t('resultTitle') }</h1>
+              <h1 className="text-4xl font-bold mb-4">{t('resultTitle')}</h1>
               <p className="text-muted-foreground text-lg">
-                
-                { t('resultSubtitle') }
+
+                {t('resultSubtitle')}
               </p>
             </div>
-            {matchedBreeds.length > 0 && <p className="text-lg mb-6">Breeds matched: {matchedBreeds.join(', ')}</p>}
-            {matchedAnimals.length > 0 ? (
-              <>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                  {matchedAnimals.map((animal) => (
-                    <AnimalCard key={animal.id} animal={animal} />
-                  ))}
-                </div>
+            {isSpecial ?
+              <div className="items-center flex flex-col gap-3">
+                <img src="/pets/special-xmas.png" width={250} alt="Special Dog" className="mx-auto mb-8 rounded-2xl shadow-lg" />
 
-                <div className="text-center">
-                  <Button
-                    onClick={() => {
-                      setStep(0)
-                      setAnswers({})
-                      setShowResults(false)
-                    }}
-                  >
-                    { t('restartCta')}
-                  </Button>
+                {selectedPresent ?
+
+                  <div className="text-center">
+                    <h2 className="text-2xl font-bold mb-4">You have selected:</h2>
+                    <p className="text-lg font-medium mb-6">{selectedPresent}</p>
+                  </div>
+                  :
+
+                  showPresents ?
+                    <>
+                      <h2 className="text-2xl font-bold mb-4">Choose one</h2>
+                      <Card className="hover:shadow-lg w-100 text-center" variant="quaternary" onClick={() => setSelectedPresent('Cooking Class')}>
+                        <Card.Header className="font-bold">Cooking Class</Card.Header>
+                      </Card>
+                      <Card className="hover:shadow-lg w-100 text-center" variant="quaternary" onClick={() => setSelectedPresent('Fine Dining Dinner')}>
+                        <Card.Header className="font-bold">Fine Dining Dinner</Card.Header>
+                      </Card>
+                      <Card className="hover:shadow-lg w-100 text-center" variant="quaternary" onClick={() => setSelectedPresent('Salsa Dancing Class with Teacher')}>
+                        <Card.Header className="font-bold">Salsa Dancing Class with Teacher</Card.Header>
+                      </Card>
+                      <Card className="hover:shadow-lg w-100 text-center" variant="quaternary" onClick={() => setSelectedPresent('Weekend in Baños')}>
+                        <Card.Header className="font-bold">Weekend in Baños</Card.Header>
+                      </Card>
+                    </>
+                    : <Button size="lg" onClick={() => setShowPresents(true)}>I WANT MY PRESENT!</Button>
+                }
+              </div> : matchedAnimals.length > 0 ? (
+                <>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    {matchedAnimals.map((animal) => (
+                      <AnimalCard key={animal.id} animal={animal} />
+                    ))}
+                  </div>
+
+                  <div className="text-center">
+                    <Button
+                      onClick={() => {
+                        setStep(0)
+                        setAnswers({})
+                        setShowResults(false)
+                      }}
+                    >
+                      {t('restartCta')}
+                    </Button>
+                  </div>
+                </>
+              ) : (
+                <div className="text-center py-12">
+                  <p className="text-lg text-muted-foreground mb-6">
+                    {t('noMatchText')}
+                  </p>
+                  <Link href={`/animals`}>{t('browseAllPetsCta')}</Link>
                 </div>
-              </>
-            ) : (
-              <div className="text-center py-12">
-                <p className="text-lg text-muted-foreground mb-6">
-                  { t('noMatchText') }
-                </p>
-                <Link href={`/animals`}>{ t('browseAllPetsCta') }</Link>
-              </div>
-            )}
+              )}
           </div>
         )}
       </main>

@@ -12,7 +12,6 @@ export default function middleware(req: NextRequest) {
         const authValue = basicAuth.split(' ')[1];
         const [user, pwd] = atob(authValue).split(':');
 
-        // Replace with your actual username and password from environment variables
         const validUser = process.env.BASIC_AUTH_USER;
         const validPassword = process.env.BASIC_AUTH_PASSWORD;
 
