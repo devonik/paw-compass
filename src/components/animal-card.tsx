@@ -20,7 +20,7 @@ export function AnimalCard({ animal }: AnimalCardProps): ReactNode {
   const t = useTranslations('petDetail');
   return (
     <Link href={`/animals/${animal.id}`}>
-      <Card >
+      <Card className="p-0!">
         <div className="relative h-48 overflow-hidden bg-muted">
           <img
             src={animal.image || "/placeholder.svg"}
@@ -41,29 +41,32 @@ export function AnimalCard({ animal }: AnimalCardProps): ReactNode {
             />
           </Button>
         </div>
-        <Card.Header>
-          <Card.Title>{animal.name}</Card.Title>
-          <p className="text-sm text-muted-foreground mb-3">{tDogBreed(animal.breed)}</p>
-          <div className="flex gap-2 mb-4 flex-wrap">
-            <Chip color='accent' variant='soft'>
-              <Icon icon="material-symbols:pet-supplies-outline" />
-              { t('yearsOld', { age: animal.age })}
-            </Chip>
-            <Chip color='accent' variant='soft'>
-              <Icon icon="material-symbols:flash-on-outline" />
-              {tEnergies(animal.energy)}
-            </Chip>
-            <Chip color='accent' variant='soft'>
-              <Icon icon="material-symbols:measuring-tape-outline" />
-              {tSizes(animal.size)}
-            </Chip>
-          </div>
-          <p className="text-sm text-muted-foreground line-clamp-2 flex-1">{animal.description}</p>
+        <div className="p-8">
+          <Card.Header>
+            <Card.Title>{animal.name}</Card.Title>
+            <p className="text-sm text-muted-foreground mb-3">{tDogBreed(animal.breed)}</p>
+            <div className="flex gap-2 mb-4 flex-wrap">
+              <Chip color='accent' variant='soft'>
+                <Icon icon="material-symbols:pet-supplies-outline" />
+                {t('yearsOld', { age: animal.age })}
+              </Chip>
+              <Chip color='accent' variant='soft'>
+                <Icon icon="material-symbols:flash-on-outline" />
+                {tEnergies(animal.energy)}
+              </Chip>
+              <Chip color='accent' variant='soft'>
+                <Icon icon="material-symbols:measuring-tape-outline" />
+                {tSizes(animal.size)}
+              </Chip>
+            </div>
+            <p className="text-sm text-muted-foreground line-clamp-2 flex-1">{animal.description}</p>
 
-        </Card.Header>
-        <Card.Footer className="border-t border-border mt-4 pt-4 text-xs text-muted-foreground">
-          {animal.shelterName}
-        </Card.Footer>
+          </Card.Header>
+          <Card.Footer className="border-t border-border text-xs text-muted-foreground mt-4 pt-4">
+            {animal.shelterName}
+          </Card.Footer>
+        </div>
+
       </Card>
     </Link>
   )
