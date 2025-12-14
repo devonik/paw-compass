@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, ViewTransition } from "react"
 import { Header } from "@/src/components/header"
 import { getMatchedAnimals } from "@/src/lib/sample-data";
 import { AnimalCard } from "@/src/components/animal-card"
@@ -205,7 +205,7 @@ export default function QuizPage() {
                   :
 
                   showPresents ?
-                    <>
+                    <ViewTransition>
                       <h2 className="text-2xl font-bold mb-4">Choose one</h2>
                       <Card className="hover:shadow-lg w-100 text-center" variant="quaternary" onClick={() => setSelectedPresent('Cooking Class')}>
                         <Card.Header className="font-bold">Cooking Class</Card.Header>
@@ -219,7 +219,10 @@ export default function QuizPage() {
                       <Card className="hover:shadow-lg w-100 text-center" variant="quaternary" onClick={() => setSelectedPresent('Weekend in Baños')}>
                         <Card.Header className="font-bold">Weekend in Baños</Card.Header>
                       </Card>
-                    </>
+                      <Card className="hover:shadow-lg w-100 text-center" variant="quaternary" onClick={() => setSelectedPresent('50% voucher for OWD - Open Water Diver')}>
+                        <Card.Header className="font-bold">50% voucher for OWD - Open Water Diver</Card.Header>
+                      </Card>
+                    </ViewTransition>
                     : <Button size="lg" onClick={() => setShowPresents(true)}>I WANT MY PRESENT!</Button>
                 }
               </div> : matchedAnimals.length > 0 ? (
