@@ -18,7 +18,9 @@
     "age": "Alter",
     "gender": "Geschlecht",
     "size": "Größe",
-    "energy": "Energielevel"
+    "energy": "Energielevel",
+    "female": "Weiblich",
+    "male": "Männlich"
   },
   "petDetail":{
     "notFound": "Tier nicht gefunden",

@@ -74,11 +74,11 @@ export default function AnimalDetailPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <p className="text-xs text-muted-foreground mb-1">{tCommon('age')}</p>
-                  <p className="font-semibold">{animal.age} years old</p>
+                  <p className="font-semibold">{t('yearsOld', { age: animal.age })}</p>
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground mb-1">{tCommon('gender')}</p>
-                  <p className="font-semibold capitalize">{animal.gender}</p>
+                  <p className="font-semibold capitalize">{tCommon(animal.gender)}</p>
                 </div>
                 <div>
                   <p className="text-xs text-muted-foreground mb-1">{tCommon('size')}</p>
@@ -94,7 +94,7 @@ export default function AnimalDetailPage() {
               <Card.Header className="font-bold text-primary">
                 {t('adoptionFee')}
               </Card.Header>
-              <Card.Description className="text-3xl font-bold">${animal.adoptionFee}</Card.Description>
+              <Card.Description className="text-3xl font-bold">€{animal.adoptionFee}</Card.Description>
             </Card>
 
             <div>
