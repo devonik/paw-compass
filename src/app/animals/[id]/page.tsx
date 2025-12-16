@@ -70,7 +70,7 @@ export default function AnimalDetailPage() {
               <p className="text-muted-foreground text-lg">{tDogBreed(animal.breed)}</p>
             </div>
 
-            <Card className="p-8 h-fit">
+            <Card className="h-fit">
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <p className="text-xs text-muted-foreground mb-1">{tCommon('age')}</p>
@@ -90,7 +90,7 @@ export default function AnimalDetailPage() {
                 </div>
               </div>
             </Card>
-            <Card variant="quaternary" className="p-8">
+            <Card variant="quaternary">
               <Card.Header className="font-bold text-primary">
                 {t('adoptionFee')}
               </Card.Header>

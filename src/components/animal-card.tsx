@@ -41,7 +41,7 @@ export function AnimalCard({ animal }: AnimalCardProps): ReactNode {
             />
           </Button>
         </div>
-        <div className="p-8">
+        <div className="p-8 pt-4">
           <Card.Header>
             <Card.Title>{animal.name}</Card.Title>
             <p className="text-sm text-muted-foreground mb-3">{tDogBreed(animal.breed)}</p>

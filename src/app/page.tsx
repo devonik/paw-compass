@@ -7,6 +7,7 @@ import { Footer } from "../components/footer";
 import { Button } from '@heroui/react';
 import { Card } from "@heroui/react";
 import { Icon } from "@iconify/react";
+import { shelters } from "../lib/sample-data";
 
 export default function HomePage() {
   const t = useTranslations('home');
@@ -109,28 +110,21 @@ export default function HomePage() {
           { t('partnerShelters.text') }
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {[
-            "Happy Paws Shelter",
-            "City Animal Care",
-            "Rescue Ranch",
-            "Hope for Tails",
-            "Furry Friends",
-            "Second Chance",
-            "Love & Paws",
-            "Safe Haven",
-          ].map((shelter) => (
-            <Card key={shelter}>
+          {shelters.map((shelter) => (
+            <Card key={shelter.id} className="p-0!">
             <img
               alt="Indie Hackers community"
-              className="pointer-events-none aspect-square select-none rounded-2xl object-cover"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               loading="lazy"
-              src="https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/docs/demo1.jpg"
+              src={shelter.imageSrc}
             />
+            <div className="p-8 pt-4">
             <Card.Header>
               <Card.Description>
-                {shelter}
+                {shelter.name}
               </Card.Description>
             </Card.Header>
+            </div>
           </Card>
           ))}
         </div>

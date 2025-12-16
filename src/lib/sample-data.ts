@@ -25,36 +25,49 @@ export interface Shelter {
   location: string
   email: string
   phone: string
+  imageSrc: string
 }
 
 export const shelters: Shelter[] = [
   {
     id: "shelter-1",
-    name: "Happy Paws Shelter",
-    location: "Hamburg",
-    email: "info@happypaws.com",
-    phone: "555-0001",
+    name: "Pfotenfreunde Tierheim",
+    location: "Berlin",
+    email: "kontakt@pfotenfreunde-berlin.de",
+    phone: "030-1234567",
+    imageSrc: '/shelter/pfotenfreunde.png'
   },
   {
     id: "shelter-2",
-    name: "City Animal Care",
-    location: "Berlin",
-    email: "contact@citycare.com",
-    phone: "555-0002",
+    name: "Tierheim Sonnenschein",
+    location: "München",
+    email: "info@tierheim-sonnenschein.de",
+    phone: "089-9876543",
+    imageSrc: '/shelter/sonnenschein.png'
   },
   {
     id: "shelter-3",
-    name: "Rescue Ranch",
-    location: "München",
-    email: "hello@rescueranch.com",
-    phone: "555-0003",
+    name: "Hoffnung für Tiere e.V.",
+    location: "Köln",
+    email: "mail@hoffnung-fuer-tiere.de",
+    phone: "0221-456789",
+    imageSrc: '/shelter/hoffnung-fuer-tiere.png'
   },
   {
     id: "shelter-4",
-    name: "Hope for Tails",
-    location: "East Side",
-    email: "support@hopetails.com",
-    phone: "555-0004",
+    name: "Nordpfoten Tierhilfe",
+    location: "Hamburg",
+    email: "info@nordpfoten.de",
+    phone: "040-33445566",
+    imageSrc: '/shelter/nordpfoten.png'
+  },
+  {
+    id: "shelter-5",
+    name: "Tierasyl Regenbogen",
+    location: "Frankfurt am Main",
+    email: "kontakt@tierasyl-regenbogen.de",
+    phone: "069-77889900",
+    imageSrc: '/shelter/regenbogen.png'
   },
 ]
 
