@@ -53,7 +53,7 @@ export default function AboutPage() {
                     <p className="text-muted-foreground">{t("animalsAvailable")}</p>
                   </div>
                   <div>
-                    <p className="text-4xl font-bold text-secondary">2024</p>
+                    <p className="text-4xl font-bold text-secondary">2026</p>
                     <p className="text-muted-foreground">{t("founded")}</p>
                   </div>
                 </div>
