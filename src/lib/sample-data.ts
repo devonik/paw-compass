@@ -69,6 +69,30 @@ export const shelters: Shelter[] = [
     phone: "069-77889900",
     imageSrc: '/shelter/regenbogen.png'
   },
+  {
+    id: "shelter-6",
+    name: "Tierhilfe Südpfalz",
+    location: "Karlsruhe",
+    email: "info@tierhilfe-suedpfalz.de",
+    phone: "0721-445566",
+    imageSrc: '/shelter/suedpfalz.png'
+  },
+  {
+    id: "shelter-7",
+    name: "Pfoten & Herzen",
+    location: "Stuttgart",
+    email: "kontakt@pfoten-und-herzen.de",
+    phone: "0711-889900",
+    imageSrc: '/shelter/pfoten-und-herzen.png'
+  },
+  {
+    id: "shelter-8",
+    name: "Tierheim Elbtal",
+    location: "Dresden",
+    email: "info@tierheim-elbtal.de",
+    phone: "0351-223344",
+    imageSrc: '/shelter/elbtal.png'
+  },
 ]
 
 export const animals: Animal[] = [
