@@ -207,17 +207,17 @@ export default function QuizPage() {
                   showPresents ?
                     <ViewTransition>
                       <h2 className="text-2xl font-bold mb-4">Choose one</h2>
-                      <Card className="hover:shadow-lg w-100 text-center" variant="quaternary" onClick={() => setSelectedPresent('Cooking Class')}>
-                        <Card.Header className="font-bold">Cooking Class</Card.Header>
-                      </Card>
-                      <Card className="hover:shadow-lg w-100 text-center" variant="quaternary" onClick={() => setSelectedPresent('Fine Dining Dinner')}>
-                        <Card.Header className="font-bold">Fine Dining Dinner</Card.Header>
+                      <Card className="hover:shadow-lg w-100 text-center" variant="quaternary" onClick={() => setSelectedPresent('Fine Dining')}>
+                        <Card.Header className="font-bold">Fine Dining</Card.Header>
                       </Card>
                       <Card className="hover:shadow-lg w-100 text-center" variant="quaternary" onClick={() => setSelectedPresent('Salsa Dancing Class with Teacher')}>
                         <Card.Header className="font-bold">Salsa Dancing Class with Teacher</Card.Header>
                       </Card>
-                      <Card className="hover:shadow-lg w-100 text-center" variant="quaternary" onClick={() => setSelectedPresent('Weekend in Baños')}>
-                        <Card.Header className="font-bold">Weekend in Baños</Card.Header>
+                      <Card className="hover:shadow-lg w-100 text-center" variant="quaternary" onClick={() => setSelectedPresent('Weekend 2/3/4 in Baños')}>
+                        <Card.Header className="font-bold">Weekend 2/3/4 in Baños</Card.Header>
+                      </Card>
+                      <Card className="hover:shadow-lg w-100 text-center" variant="quaternary" onClick={() => setSelectedPresent('Weekend 2/3/4 in Amazon @Kailash House')}>
+                        <Card.Header className="font-bold">Weekend 2/3/4 in Amazon @Kailash House</Card.Header>
                       </Card>
                       <Card className="hover:shadow-lg w-100 text-center" variant="quaternary" onClick={() => setSelectedPresent('50% voucher for OWD - Open Water Diver')}>
                         <Card.Header className="font-bold">50% voucher for OWD - Open Water Diver</Card.Header>
